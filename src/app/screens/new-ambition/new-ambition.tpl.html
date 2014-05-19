@@ -1,3 +1,30 @@
 <form action="">
-    <input ng-model="newAmbition.name" type="text">
+    <fieldset>
+        <label>What is your ambition?</label>
+        <input ng-model="newAmbition.name" type="text" placeholder="get fitter">
+    </fieldset>
+    <fieldset>
+        <label for="">To achieve this, what do you need to do? </label>
+        <input type="text" placeholder="train in the gym">
+    </fieldset>
+    <fieldset>
+        <label for="">How often do you want to commit to this task?</label>
+        <input type="text" placeholder="2">
+        <label>times</label>
+        <label>per</label>
+            <select name="" id="">
+                <option value="day">day</option>
+                <option value="week">week</option>
+                <option value="month">month</option>
+                <option value="year">year</option>
+            </select>
+    </fieldset>
+    <fieldset>
+        <label for="">My first reachable goal is to</label>
+        <input type="text" placeholder="loose 2kg weight">
+    </fieldset>
+    <fieldset>
+        <button>cancel</button>
+        <button>get started</button>
+    </fieldset>
 </form>
