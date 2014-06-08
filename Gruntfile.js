@@ -18,22 +18,28 @@ module.exports = function (grunt) {
             scripts: {
                 src: ['src/**/*.js', '!src/**/*.spec.js'],
                 dest: '_build/app.js'
-            },
-            styles: {
-                src: 'src/**/*.scss',
-                dest: '_tmp/app.scss'
             }
         },
 
+        copy: {
+            styles: {
+                expand: true,
+                flatten: true,
+                src: ['src/**/*.scss'],
+                dest: '_tmp/',
+                filter: 'isFile'
+            }
+        },
 
-        sass: {
-            dist: {
-                files: {
-                    '_build/app.css': '_tmp/app.scss'
+        compass: {
+            dev: {
+                options: {
+                    sassDir: '_tmp',
+                    cssDir: '_build',
+                    environment: 'development'
                 }
             }
         },
-
 
         jshint: {
             options: {
@@ -57,7 +63,7 @@ module.exports = function (grunt) {
             },
             styles: {
                 files: ['src/**/*.scss'],
-                tasks: ['concat:styles', 'sass:dist']
+                tasks: ['copy:styles', 'compass:dev']
             }
         },
 
@@ -78,7 +84,8 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-karma');
@@ -87,8 +94,8 @@ module.exports = function (grunt) {
         'jshint:all',
         'concat:libraries',
         'concat:scripts',
-        'concat:styles',
-        'sass:dist',
+        'copy:styles',
+        'compass:dev',
         'karma:unit',
         'watch'
     ]);
