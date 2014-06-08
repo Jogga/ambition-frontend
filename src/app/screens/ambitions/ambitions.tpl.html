@@ -1,6 +1,9 @@
-<div>
-    <h1>my ambitions</h1>
-    <ul>
-        <li ng-repeat="ambition in ambitions" class="amb-ambition">{{ambition.name}}</li>
-    </ul>
+<h1>my ambitions</h1>
+<div ng-repeat="ambition in ambitions" class="amb-ambition">
+    <p class="amb-ambition-name">to {{ambition.name}},</p>
+    <h2 class="amb-ambition-activity">did you {{ambition.activity}} today?</h2>
+    <div class="amb-ambition-interaction">
+        <button class="amb-button amb-button-positive">Yes</button>
+        <button class="amb-button amb-button-negative">No</button>
+    </div>
 </div>

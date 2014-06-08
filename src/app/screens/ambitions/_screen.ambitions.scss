@@ -1,3 +1,65 @@
+/**
+ * ambition styles for ambition.ne
+ * @author Jogga <joachim@froestl.com>
+ */
+
 .amb-ambition{
-    color: red;
+    max-width: 400px;
+    padding: 20px;
+    border: {
+        width: 0;
+        bottom-width: 2px;
+        style: solid;
+        color: $amb-clr-grey-lgt;
+    }
+    margin: {
+        left: auto;
+        right: auto;
+        bottom: 20px;
+    }
+
+    background: {
+        color: $amb-clr-white;
+    }
+    color: $amb-clr-black;
+}
+
+
+.amb-ambition-name {
+    margin: 0;
+
+    font: {
+        family: Georgia;
+        style: italic;
+    }
+}
+
+.amb-ambition-activity {
+    margin: 0;
+
+    font: {
+        size: 36px;
+        weight: 400;
+    }
+    line-height: 36px;
+}
+
+.amb-ambition-interaction {
+    margin: {
+        top: 40px;
+    }
+
+    .amb-button-positive {
+        &:hover {
+            border-color: $amb-clr-green;
+            color: $amb-clr-green;
+        }
+    }
+
+    .amb-button-negative {
+        &:hover {
+            border-color: $amb-clr-red;
+            color: $amb-clr-red;
+        }
+    }
 }

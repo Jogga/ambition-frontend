@@ -3,3 +3,14 @@
  * @author Jogga <joachim@froestl.com>
  */
 
+
+/* Font Stacks */
+$amb-sans: "omnes-pro", "Helvetica Neue", Arial, sans-serif;
+
+
+/* Typo Styling */
+body {
+    font: {
+        family: $amb-sans;
+    }
+}

@@ -6,8 +6,14 @@
 
     function ambitionsController($scope) {
         $scope.ambitions = [
-            {name: 'learn guitar'},
-            {name: 'get fitter'}
+            {
+                name: 'learn guitar',
+                activity: 'play the guitar'
+            },
+            {
+                name: 'get fitter',
+                activity: 'workout at the gym'
+            }
         ];
     }
 
