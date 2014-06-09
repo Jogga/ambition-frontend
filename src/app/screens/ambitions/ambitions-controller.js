@@ -15,6 +15,9 @@
                 activity: 'workout at the gym'
             }
         ];
+        $scope.doCreateAmbition = function (ambition) {
+            console.log(ambition);
+        };
     }
 
 }(this));

@@ -1,4 +1,11 @@
-<h1>my ambitions</h1>
+<div class="amb-ambition-create">
+    <div ng-click="showNew = !showNew" ng-hide="showNew" class="amb-ambition amb-ambition-new">
+        <span>+</span>
+        <span>new ambition</span>
+    </div>
+    <div ng-show="showNew" new-ambition class="amb-ambition"></div>
+</div>
+
 <div ng-repeat="ambition in ambitions" class="amb-ambition">
     <p class="amb-ambition-name">to {{ambition.name}},</p>
     <h2 class="amb-ambition-activity">did you {{ambition.activity}} today?</h2>

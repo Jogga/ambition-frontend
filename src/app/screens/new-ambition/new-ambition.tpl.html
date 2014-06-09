@@ -5,26 +5,35 @@
     </fieldset>
     <fieldset>
         <label for="">To achieve this, what do you need to do? </label>
-        <input type="text" placeholder="train in the gym">
+        <input ng-model="newAmbition.activity.name" type="text" placeholder="train in the gym">
     </fieldset>
     <fieldset>
-        <label for="">How often do you want to commit to this task?</label>
-        <input type="text" placeholder="2">
-        <label>times</label>
-        <label>per</label>
-            <select name="" id="">
-                <option value="day">day</option>
-                <option value="week">week</option>
-                <option value="month">month</option>
-                <option value="year">year</option>
-            </select>
+        <label for="" class="amb-label-interval">How often do you want to do this activity?</label>
+        <select class="amb-inp-interval" ng-model="newAmbition.activity.interval" name="" id="">
+            <option value="1">once</option>
+            <option value="2">twice</option>
+            <option value="3">three times</option>
+            <option value="4">four times</option>
+            <option value="5">five times</option>
+            <option value="6">six times</option>
+            <option value="7">seven times</option>
+            <option value="8">eight times</option>
+            <option value="9">nine times</option>
+            <option value="10">ten times</option>
+        </select>
+        <select class="amb-inp-period" ng-model="newAmbition.activity.period" name="" id="">
+            <option value="day">a day</option>
+            <option value="week">a week</option>
+            <option value="month">a month</option>
+            <option value="year">a year</option>
+        </select>
     </fieldset>
-    <fieldset>
+<!--<fieldset>
         <label for="">My first reachable goal is to</label>
         <input type="text" placeholder="loose 2kg weight">
-    </fieldset>
-    <fieldset>
-        <button>cancel</button>
-        <button>get started</button>
+    </fieldset> -->
+    <fieldset class="amb-form-finish">
+        <button ng-click="showNew = false" class="amb-button">cancel</button>
+        <button ng-click="createAmbition()" class="amb-button amb-button-positive">get started</button>
     </fieldset>
 </form>

@@ -5,12 +5,13 @@
 
 
 /* Font Stacks */
-$amb-sans: "omnes-pro", "Helvetica Neue", Arial, sans-serif;
+$amb-fnt-sans: "omnes-pro", "Helvetica Neue", Arial, sans-serif;
+$amb-fnt-serif: "freight-display-pro", Georgia, serif;
 
 
 /* Typo Styling */
 body {
     font: {
-        family: $amb-sans;
+        family: $amb-fnt-sans;
     }
 }

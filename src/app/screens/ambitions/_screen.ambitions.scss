@@ -29,8 +29,10 @@
     margin: 0;
 
     font: {
-        family: Georgia;
-        style: italic;
+        size: 20px;
+        family: $amb-fnt-serif;
+        style: normal;
+        weight: 400;
     }
 }
 
@@ -47,6 +49,12 @@
 .amb-ambition-interaction {
     margin: {
         top: 40px;
+    }
+
+    .amb-button {
+        text-align: center;
+        padding:  15px 0;
+        width: 51px;
     }
 
     .amb-button-positive {
