@@ -8,10 +8,13 @@
 
 <div ng-repeat="ambition in ambitions" class="amb-ambition">
     <p class="amb-ambition-name">to {{ambition.name}},</p>
-    <h2 class="amb-ambition-activity">did you {{ambition.activity}} today?</h2>
-    <div class="amb-ambition-interaction">
-        <button class="amb-button amb-button-positive">Yes</button>
-        <button class="amb-button amb-button-negative">No</button>
+    <div ng-repeat="activity in ambition.activities">
+        <h2 class="amb-ambition-activity">did you {{activity.exercise}} today?</h2>
+        <div class="amb-ambition-interaction">
+            <button class="amb-button amb-button-positive">Yes</button>
+            <button class="amb-button amb-button-negative">No</button>
+            <!-- <button ng-click="deleteAmbition(ambition)" class="amb-button amb-button-negative">Delete</button> -->
+        </div>
     </div>
     <div class="amb-ambition-date">&nbsp;</div>
     <div class="amb-ambition-timeline">&nbsp;</div>
