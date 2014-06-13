@@ -30,4 +30,8 @@
         color: $amb-clr-black;
         @include transition-duration(0.1s);
     }
+
+    &:focus {
+        outline:none;
+    }
 }
