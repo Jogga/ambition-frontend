@@ -25,16 +25,16 @@
         $scope.checkActivity = function (activity) {
             ActivityRecord.save({
                 success: true,
-                activity_id: activity.id,
-                ambition_id: activity.ambition_id
+                activityId: activity.id,
+                ambitionId: activity.ambitionId
             });
         };
 
         $scope.missActivity = function (activity) {
             ActivityRecord.save({
                 success: false,
-                activity_id: activity.id,
-                ambition_id: activity.ambition_id
+                activityId: activity.id,
+                ambitionId: activity.ambitionId
             });
         };
     }

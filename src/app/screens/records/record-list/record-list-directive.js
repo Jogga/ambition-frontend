@@ -17,9 +17,8 @@
 
             scope.getAmbition = function (id) {
                 if (!scope.ambitions) {return {};}
-                for(var i = 0; i < scope.ambitions.length; i++) {
+                for (var i = 0; i < scope.ambitions.length; i++) {
                     if (scope.ambitions[i].id === id) {
-                        console.log('found!', i);
                         return scope.ambitions[i];
                     }
                 }
