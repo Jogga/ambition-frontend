@@ -59,7 +59,9 @@
 
         @include transition-property(background);
         @include transition-duration(0.25s);
-        &:hover {
+        &:hover,
+        &:focus {
+            outline: none;
             @include transition-duration(0.1s);
             background-color: $amb-clr-grey-xlgt;
         }
@@ -77,6 +79,15 @@
         color: $amb-clr-white;
         border: {
             color: $amb-clr-green;
+        }
+        &:hover,
+        &:focus {
+            background: {
+                color: #06A766;
+            }
+            border: {
+                color: #06A766;
+            }
         }
     }
 

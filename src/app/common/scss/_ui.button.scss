@@ -20,10 +20,12 @@
     }
 
     @include border-radius(30px);
-    @include transition-property(color border);
+    @include transition-property(color border background);
     @include transition-duration(0.25s);
 
-    &:hover {
+    &:hover,
+    &:focus {
+        outline: none;
         border-color: $amb-clr-black;
         color: $amb-clr-black;
         @include transition-duration(0.1s);
