@@ -9,7 +9,7 @@
         'amb.ambitions.newAmbitionDirective'
     ]).config(function ($routeProvider, sharedDataProvider) {
         $routeProvider.when('/', {
-            templateUrl: 'src/app/screens/ambitions/ambitions.tpl.html',
+            templateUrl: 'screens/ambitions/ambitions.tpl.html',
             controller: 'ambitionsController',
             resolve: sharedDataProvider.init()
         });

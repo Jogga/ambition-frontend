@@ -49,6 +49,28 @@ module.exports = function (grunt) {
             all: ['src/**/*.js']
         },
 
+        ngtemplates: {
+            'amb.templates': {
+                src: '<%= watch.templates.files %>',
+                dest: '_build/_templates.js',
+                options: {
+                    url: function (url) {
+                        return url.replace('src/app/', '');
+                    },
+                    standalone: 'true',
+                    htmlmin: {
+                        collapseBooleanAttributes:      true,
+                        collapseWhitespace:             true,
+                        removeAttributeQuotes:          true,
+                        removeComments:                 true,
+                        removeEmptyAttributes:          true,
+                        removeScriptTypeAttributes:     true,
+                        removeStyleLinkTypeAttributes:  true
+                    }
+                }
+            }
+        },
+
 
         watch: {
             options: {
@@ -60,7 +82,8 @@ module.exports = function (grunt) {
                 tasks: ['default']
             },
             templates: {
-                files: ['src/**/*.html']
+                files: ['src/**/*.html'],
+                task: ['ngtemplates:amb.templates']
             },
             styles: {
                 files: ['src/**/*.scss'],
@@ -75,6 +98,7 @@ module.exports = function (grunt) {
                     singleRun: true,
                     files: [
                         '_build/libs.js',
+                        '_build/_templates.js',
                         '_build/app.js',
                         'bower_components/angular-mocks/angular-mocks.js',
                         'src/**/*.spec.js'
@@ -89,10 +113,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('default', [
         'jshint:all',
+        'ngtemplates:amb.templates',
         'concat:libraries',
         'concat:scripts',
         'copy:styles',

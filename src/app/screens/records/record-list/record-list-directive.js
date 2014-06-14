@@ -8,7 +8,7 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'src/app/screens/records/record-list/record-list.tpl.html',
+            templateUrl: 'screens/records/record-list/record-list.tpl.html',
             link: linkFn
         };
 

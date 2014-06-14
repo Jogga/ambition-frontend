@@ -9,7 +9,7 @@
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'src/app/common/menu/main-menu.tpl.html'
+            templateUrl: 'common/menu/main-menu.tpl.html'
         };
 
     }

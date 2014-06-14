@@ -9,7 +9,7 @@
         return {
             restrict: 'A',
             repalce: true,
-            templateUrl: 'src/app/screens/ambitions/new-ambition/new-ambition.tpl.html',
+            templateUrl: 'screens/ambitions/new-ambition/new-ambition.tpl.html',
             link: linkFn
         };
 

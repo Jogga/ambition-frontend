@@ -9,7 +9,7 @@
     ])
     .config(function ($routeProvider, sharedDataProvider) {
         $routeProvider.when('/records', {
-            templateUrl: 'src/app/screens/records/records.tpl.html',
+            templateUrl: 'screens/records/records.tpl.html',
             controller: 'recordsController',
             resolve: sharedDataProvider.extend ({
                 recordList: function (ActivityRecord) {
