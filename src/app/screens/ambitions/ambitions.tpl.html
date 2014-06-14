@@ -11,12 +11,14 @@
     <div ng-repeat="activity in ambition.activities">
         <h2 class="amb-ambition-activity">did you {{activity.exercise}} today?</h2>
         <div class="amb-ambition-interaction">
-            <button class="amb-button amb-button-positive">Yes</button>
-            <button class="amb-button amb-button-negative">No</button>
-            <!-- <button ng-click="deleteAmbition(ambition)" class="amb-button amb-button-negative">Delete</button> -->
+            <button class="amb-button amb-button-positive" ng-click="checkActivity(activity)">Yes</button>
+            <button class="amb-button amb-button-negative" ng-click="missActivity(activity)">No</button>
         </div>
     </div>
+
+    <!-- <button ng-click="deleteAmbition(ambition)" class="amb-button amb-button-negative">Delete</button> -->
     <div class="amb-ambition-date">&nbsp;</div>
     <div class="amb-ambition-timeline">&nbsp;</div>
     <div class="amb-ambition-timeline future">&nbsp;</div>
+
 </div>

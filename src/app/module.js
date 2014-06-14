@@ -2,11 +2,11 @@
     'use strict';
 
     exports.angular.module('amb', [
-        'ngRoute',                
+        'ngRoute',
         'amb.ambitions.ambitionsController',
         'amb.ambitions.newAmbitionDirective'
     ]).config(function ($routeProvider) {
-        $routeProvider.when('/ambitions', {
+        $routeProvider.when('/', {
             templateUrl: 'src/app/screens/ambitions/ambitions.tpl.html',
             controller: 'ambitionsController'
         });

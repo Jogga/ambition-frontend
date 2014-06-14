@@ -2,10 +2,11 @@
     'use strict';
 
     exports.angular.module('amb.ambitions.ambitionsController', [
-        'amb.ambitions.Ambition'
+        'amb.ambitions.Ambition',
+        'amb.ambitions.ActivityRecord'
     ]).controller('ambitionsController', ambitionsController);
 
-    function ambitionsController($scope, Ambition) {
+    function ambitionsController($scope, Ambition, ActivityRecord) {
 
         Ambition.query().$promise.then(function (res) {
             $scope.ambitions = res ? res : [];
@@ -22,6 +23,21 @@
             });
         };
 
+        $scope.checkActivity = function (activity) {
+            ActivityRecord.save({
+                success: true,
+                activity_id: activity.id,
+                ambition_id: activity.ambition_id
+            });
+        };
+
+        $scope.missActivity = function (activity) {
+            ActivityRecord.save({
+                success: false,
+                activity_id: activity.id,
+                ambition_id: activity.ambition_id
+            });
+        };
     }
 
 }(this));

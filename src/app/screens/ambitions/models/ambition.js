@@ -11,10 +11,7 @@
 
         var Ambition = $resource(AMBITIONS_URL, {
             id: '@id'
-        },
-        {
-
-        });
+        }, {});
 
         return Ambition;
 
