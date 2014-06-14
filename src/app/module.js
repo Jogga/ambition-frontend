@@ -3,6 +3,7 @@
 
     exports.angular.module('amb', [
         'ngRoute',
+        'amb.menu.mainMenu',
         'amb.ambitions.ambitionsController',
         'amb.ambitions.newAmbitionDirective'
     ]).config(function ($routeProvider) {
