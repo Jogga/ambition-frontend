@@ -1,7 +1,7 @@
 (function(sandbox) {
     'use strict';
 
-    sandbox.angular.module('amb.ambitions.ActivityRecord', [
+    sandbox.angular.module('amb.model.ActivityRecord', [
         'ngResource',
         'amb.config.routes'
     ])

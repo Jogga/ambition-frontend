@@ -1,0 +1,5 @@
+<div>
+    <ul>
+        <li ng-repeat="record in records | orderBy:'created_at':true">{{record.created_at | date:'d MMM y - HH:mm'}} - {{record.success}} - {{getAmbition(record.ambition_id).name}}</li>
+    </ul>
+</div>

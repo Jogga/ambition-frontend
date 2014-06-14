@@ -1,6 +1,7 @@
-describe('main amb module', function () {
+describe('records controller', function () {
     'use strict';
-    beforeEach(module('amb'));
+
+    beforeEach(module('amb.records.recordsController'));
     beforeEach(inject());
     
     it('can init main module', function () {

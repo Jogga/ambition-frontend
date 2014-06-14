@@ -2,7 +2,7 @@
     'use strict';
 
     exports.angular.module('amb.ambitions.newAmbitionDirective', [
-        'amb.ambitions.Ambition'
+        'amb.model.Ambition'
     ]).directive('newAmbition', newAmbitionDirective);
 
     function newAmbitionDirective(Ambition) {

@@ -1,7 +1,7 @@
-(function(sandbox) {
+(function(exports) {
     'use strict';
 
-    sandbox.CONFIG = {
+    exports.CONFIG = {
         API_URL: 'http://localhost:3000/api'
     };
 

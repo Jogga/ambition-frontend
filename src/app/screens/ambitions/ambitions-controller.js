@@ -1,16 +1,15 @@
 (function (exports) {
     'use strict';
 
-    exports.angular.module('amb.ambitions.ambitionsController', [
-        'amb.ambitions.Ambition',
-        'amb.ambitions.ActivityRecord'
+    exports.angular.module('amb.ambitions.AmbitionsController', [
+        'amb.sharedData',
+        'amb.model.Ambition',
+        'amb.model.ActivityRecord'
     ]).controller('ambitionsController', ambitionsController);
 
-    function ambitionsController($scope, Ambition, ActivityRecord) {
+    function ambitionsController($scope, sharedData, Ambition, ActivityRecord) {
 
-        Ambition.query().$promise.then(function (res) {
-            $scope.ambitions = res ? res : [];
-        });
+        $scope.ambitions = sharedData.ambitionList;
 
         $scope.deleteAmbition = function (ambition) {
             ambition.$remove().then(function (success) {
