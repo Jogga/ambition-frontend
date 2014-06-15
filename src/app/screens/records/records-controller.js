@@ -10,6 +10,9 @@
     function recordsController($scope, sharedData, ActivityRecord, recordList) {
         $scope.records = recordList;
         $scope.ambitions = sharedData.ambitionList;
+        $scope.removeRecord = function (record) {
+            record.$remove();
+        };
     }
 
 }(this));

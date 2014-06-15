@@ -1,6 +1,7 @@
 <ul>
     <li ng-repeat="activity in getActivitiesForToday()" class="amb-activity">
-        <h2>{{activity.exercise}} {{getAmbition(activity.ambitionId).name}}</h2>
+        <p>{{activity.ambition.name}}</p>
+        <h2>{{activity.exercise}}</h2>
         <div class="amb-ambition-interaction">
             <button class="amb-button amb-button-positive" ng-click="checkActivity(activity)">Yes</button>
             <button class="amb-button amb-button-negative" ng-click="missActivity(activity)">No</button>

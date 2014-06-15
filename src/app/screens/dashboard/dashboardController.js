@@ -1,10 +1,12 @@
 (function (exports) {
     'use strict';
 
-    exports.angular.module('amb.dashboard.dashboardController', [])
+    exports.angular.module('amb.dashboard.dashboardController', [
+        'amb.model.ActivityRecord'
+    ])
     .controller('dashboardController', dashboardController);
 
-    function dashboardController($scope, sharedData, activityRecordList) {
+    function dashboardController($scope, sharedData, activityRecordList, ActivityRecord) {
         var moment = exports.moment;
         var mondayOfCurrWeek = moment().startOf('isoweek');
         var sundayOfCurrWeel = moment().endOf('isoweek');
@@ -21,6 +23,23 @@
             return [].concat.apply([], $scope.ambitions.map(toActivities)).filter(isRelevantToday);
         };
 
+        $scope.checkActivity = function (activity) {
+            ActivityRecord.save({
+                success: true,
+                activityId: activity.id,
+                ambitionId: activity.ambitionId
+            });
+        };
+
+        $scope.missActivity = function (activity) {
+            ActivityRecord.save({
+                success: false,
+                activityId: activity.id,
+                ambitionId: activity.ambitionId
+            });
+        };
+
+
         // @TODO optimize performance e.g. with memoization
         function isRelevantToday(activity) {
             for (var i = 0; i < $scope.activityRecords.length; i++) {
@@ -33,6 +52,11 @@
         }
 
         function toActivities(ambition) {
+            ambition.activities.map(function (activity) {
+                activity.ambition = ambition;
+                return activity;
+            });
+
             return ambition.activities;
         }
 
