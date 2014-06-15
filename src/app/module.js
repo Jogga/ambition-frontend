@@ -5,7 +5,10 @@
         'amb.sharedData',
         'amb.templates',
         'amb.menu.mainMenu',
+        'amb.dashboard',
         'amb.ambitions',
         'amb.records'
-    ]);
+    ]).run(function () {
+        // exports.moment.lang('de');
+    });
 }(this));

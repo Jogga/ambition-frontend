@@ -3,6 +3,7 @@ module.exports = function (grunt) {
     'use strict';
 
     var libraries = [
+        'bower_components/momentjs/moment.js',
         'bower_components/angular/angular.js',
         'bower_components/angular-resource/angular-resource.js',
         'bower_components/angular-route/angular-route.js'
@@ -83,7 +84,7 @@ module.exports = function (grunt) {
             },
             templates: {
                 files: ['src/**/*.html'],
-                task: ['ngtemplates:amb.templates']
+                tasks: ['ngtemplates:amb.templates']
             },
             styles: {
                 files: ['src/**/*.scss'],

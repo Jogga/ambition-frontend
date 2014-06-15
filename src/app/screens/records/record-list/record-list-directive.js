@@ -1,7 +1,9 @@
 (function (exports) {
     'use strict';
 
-    exports.angular.module('amb.records.recordListDirective', [])
+    exports.angular.module('amb.records.recordListDirective', [
+        'amb.common.momentFilter'
+    ])
     .directive('recordList', recordList);
 
     function recordList() {
