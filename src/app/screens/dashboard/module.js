@@ -17,7 +17,7 @@
                 activityRecordList: function (ActivityRecord) {
                     return ActivityRecord.query({
                         startDate: mondayOfCurrWeek,
-                        endData: exports.moment()
+                        endDate: exports.moment()
                     });
                 }
             })
