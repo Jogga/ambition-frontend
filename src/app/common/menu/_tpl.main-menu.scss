@@ -54,6 +54,14 @@
             @include transition-duration($amb-tmng-hover-in);
         }
     }
+    .amb-active {
+        color: $amb-clr-green;
+        border: {
+            bottom-width: 5px;
+            color: $amb-clr-green;
+        }
+        @include transition-duration($amb-tmng-hover-in);
+    }
 }
 
 
