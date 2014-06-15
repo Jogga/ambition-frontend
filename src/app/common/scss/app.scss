@@ -1,6 +1,10 @@
+// Compass
 @import "compass/css3";
+
+// Utilities
 @import "util.normalize";
 
+// UI
 @import "ui.colors";
 @import "ui.timing";
 @import "ui.typography";
@@ -8,6 +12,10 @@
 @import "ui.global";
 @import "ui.button";
 
-@import "common.main-menu";
+// Templates
+@import "tpl.main-menu";
+@import "tpl.new-ambition";
+
+// Screens
 @import "screen.ambitions";
-@import "screen.new-ambition";
+@import "screen.dashboard";

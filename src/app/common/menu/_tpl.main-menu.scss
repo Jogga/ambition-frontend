@@ -1,0 +1,71 @@
+/**
+ * Navigation Styles for ambition.me
+ * @author Basti <sebastian@froestl.com>, Jogga <joachim@froestl.com>
+ */
+
+
+/* Nav Container */
+.amb-nav {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    background: {
+        color: $amb-clr-white;
+    }
+    @include box-shadow(rgba($amb-clr-grey, 0.25) 0px 1px 0px);
+
+    // Children
+    a {
+        display: block;
+        padding: {
+            top: 15px;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+        }
+        border: {
+            width: 0;
+            bottom-width: 5px;
+            color: $amb-clr-white;
+            style: solid;
+        }
+
+        color: $amb-clr-grey;
+        text-align: center;
+        text-decoration: none;
+        @include transition-property(color border);
+        @include transition-duration($amb-tmng-hover-out);
+
+        // States
+        &:hover,
+        &:focus,
+        .amb-active {
+            color: $amb-clr-green;
+            border: {
+                bottom-width: 5px;
+                color: $amb-clr-green;
+            }
+            @include transition-duration($amb-tmng-hover-in);
+        }
+    }
+}
+
+
+/* Nav List */
+.amb-nav-list {
+    max-width: 800px;
+    padding: 0;
+    margin: 0 auto;
+
+    li {
+        float: left;
+        width: 25%;
+        list-style-type: none;
+    }
+}

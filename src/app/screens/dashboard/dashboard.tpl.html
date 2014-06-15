@@ -1,11 +1,14 @@
-<h1>Dashboard</h1>
-
-
 <ul>
-    <li ng-repeat="activity in getActivitiesForToday()">{{activity.exercise}}</li>
+    <li ng-repeat="activity in getActivitiesForToday()" class="amb-activity">
+        <h2>{{activity.exercise}} {{getAmbition(activity.ambitionId).name}}</h2>
+        <div class="amb-ambition-interaction">
+            <button class="amb-button amb-button-positive" ng-click="checkActivity(activity)">Yes</button>
+            <button class="amb-button amb-button-negative" ng-click="missActivity(activity)">No</button>
+        </div>
+    </li>
 </ul>
 
-<!-- 
+<!--
 <ul>
     <li ng-repeat="ar in activityRecords">{{ar.success}}</li>
 </ul> -->

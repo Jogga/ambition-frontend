@@ -9,3 +9,10 @@ html {
         color: $amb-clr-white;
     }
 }
+
+
+div[ng-view]{
+    margin: {
+        top: 53px;
+    }
+}
