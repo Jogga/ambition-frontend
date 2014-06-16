@@ -1,0 +1,76 @@
+/**
+ * activity styles for ambition.me
+ * @author Jogga <joachim@froestl.com>
+ */
+
+
+/* activity container */
+.amb-activity {
+    padding: 20px;
+    margin: {
+        bottom: 1px;
+    }
+    background: {
+        color: $amb-clr-blue;
+    }
+    text-align: center;
+
+    /* Ambition name */
+    .amb-ambition-name {
+        margin: 0;
+        color: $amb-clr-white;
+
+        font: {
+            size: 20px;
+            family: $amb-fnt-serif;
+            style: normal;
+            weight: 300;
+        }
+    }
+}
+
+
+
+/* Exercise Name */
+.amb-activity-exercise {
+    margin: 0;
+    color: $amb-clr-white;
+    font: {
+        size: 32px;
+    }
+    line-height: 1em;
+}
+
+
+/* Buttons */
+.amb-activity-interaction {
+    margin: {
+        top: 40px;
+    }
+
+    .amb-button {
+        text-align: center;
+        padding:  15px 0;
+        width: 51px;
+        color: $amb-clr-blue-drk;
+        border: {
+            color: $amb-clr-blue-drk;
+        }
+    }
+
+    .amb-button-positive {
+        &:hover {
+            color: $amb-clr-black;
+            border: {
+                color: $amb-clr-black;
+            }
+        }
+    }
+
+    .amb-button-negative {
+        &:hover {
+            border-color: $amb-clr-black;
+            color: $amb-clr-black;
+        }
+    }
+}

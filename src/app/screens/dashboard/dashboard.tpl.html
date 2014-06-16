@@ -1,13 +1,11 @@
-<ul>
-    <li ng-repeat="activity in getActivitiesForToday()" class="amb-activity">
-        <p>{{activity.ambition.name}}</p>
-        <h2>{{activity.exercise}}</h2>
-        <div class="amb-ambition-interaction">
-            <button class="amb-button amb-button-positive" ng-click="checkActivity(activity)">Yes</button>
-            <button class="amb-button amb-button-negative" ng-click="missActivity(activity)">No</button>
-        </div>
-    </li>
-</ul>
+<div ng-repeat="activity in getActivitiesForToday()" class="amb-activity">
+    <p class="amb-ambition-name">to {{activity.ambition.name}},</p>
+    <h2 class="amb-activity-exercise">did you {{activity.exercise}} today?</h2>
+    <div class="amb-activity-interaction">
+        <button class="amb-button amb-button-positive" ng-click="checkActivity(activity)">Yes</button>
+        <button class="amb-button amb-button-negative" ng-click="missActivity(activity)">No</button>
+    </div>
+</div>
 
 <!--
 <ul>

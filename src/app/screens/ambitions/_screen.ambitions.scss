@@ -9,12 +9,6 @@
     position: relative;
     max-width: 400px;
     padding: 20px;
-    border: {
-        width: 0;
-        //bottom-width: 2px;
-        style: solid;
-        color: $amb-clr-grey-lgt;
-    }
     margin: {
         left: auto;
         right: auto;
@@ -48,81 +42,4 @@
         weight: 400;
     }
     line-height: 36px;
-}
-
-
-/* Buttons */
-.amb-ambition-interaction {
-    margin: {
-        top: 40px;
-    }
-
-    .amb-button {
-        text-align: center;
-        padding:  15px 0;
-        width: 51px;
-    }
-
-    .amb-button-positive {
-        &:hover {
-            color: $amb-clr-green;
-            border: {
-                color: $amb-clr-green;
-            }
-        }
-    }
-
-    .amb-button-negative {
-        &:hover {
-            border-color: $amb-clr-red;
-            color: $amb-clr-red;
-        }
-    }
-}
-
-
-/* Timeline */
-.amb-ambition-timeline {
-    border: {
-        width: 0;
-        top-width: 2px;
-        color: $amb-clr-green;
-        style: solid;
-    }
-    width: 200%;
-
-    position: absolute;
-    top: 0;
-    left: -150%;
-}
-.amb-ambition-timeline.future {
-    border: {
-        color: $amb-clr-grey-lgt;
-        style: dashed;
-    }
-    position: absolute;
-    left: 50%;
-}
-
-
-/* Date Bubble */
-.amb-ambition-date {
-    height: 10px;
-    width: 10px;
-    border: {
-        style: solid;
-        width: 4px;
-        color: $amb-clr-white;
-    }
-
-    position: absolute;
-    z-index: 1;
-    top: -7px;
-    left: 50%;
-
-    @include transform (translateX(-50%));
-    @include border-radius(15px);
-    background: {
-        color: $amb-clr-grey-lgt;
-    }
 }

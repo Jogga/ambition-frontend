@@ -12,7 +12,10 @@ html {
 
 
 div[ng-view]{
+    max-width: 800px;
     margin: {
         top: 53px;
+        right: auto;
+        left: auto;
     }
 }

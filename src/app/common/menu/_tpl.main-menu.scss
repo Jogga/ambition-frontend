@@ -25,41 +25,32 @@
         display: block;
         padding: {
             top: 15px;
-            bottom: 10px;
+            bottom: 15px;
             left: 0;
             right: 0;
-        }
-        border: {
-            width: 0;
-            bottom-width: 5px;
-            color: $amb-clr-white;
-            style: solid;
         }
 
         color: $amb-clr-grey;
         text-align: center;
         text-decoration: none;
-        @include transition-property(color border);
+        text-transform: lowercase;
+        
+        @include transition-property(color background-position);
         @include transition-duration($amb-tmng-hover-out);
-
+        background: linear-gradient(to bottom, #ffffff 0px,#ffffff 48px,#09e48c 48px,#09e48c 53px); /* W3C */
+        background-repeat: no-repeat;
+        background-position: 0px 10px;
         // States
         &:hover,
-        &:focus,
-        .amb-active {
+        &:focus {
             color: $amb-clr-green;
-            border: {
-                bottom-width: 5px;
-                color: $amb-clr-green;
-            }
             @include transition-duration($amb-tmng-hover-in);
+            background-position: 0px 0px;
         }
     }
     .amb-active {
         color: $amb-clr-green;
-        border: {
-            bottom-width: 5px;
-            color: $amb-clr-green;
-        }
+        background-position: 0px 0px;
         @include transition-duration($amb-tmng-hover-in);
     }
 }
