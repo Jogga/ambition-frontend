@@ -15,14 +15,13 @@
 
         function linkFn(scope, el, attrs) {
             scope.isActive = function (path) {
-                if ($location.path().substring(1).indexOf(path.substring(1)) !== -1 && path.substring(1) !== '' ) {
+                if ($location.path().substr(0, path.length) === path) {
                     return true;
                 } else {
                     return false;
                 }
             };
         }
-
     }
 
 }(this));
