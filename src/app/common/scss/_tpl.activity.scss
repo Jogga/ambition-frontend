@@ -10,20 +10,18 @@
     margin: {
         bottom: 1px;
     }
-    background: {
-        color: $amb-clr-white;
-    }
-    text-align: center;
+
+    text-align: left;
 
     /* Ambition name */
     .amb-ambition-name {
         margin: 0;
-        color: $amb-clr-white;
+        color: $amb-clr-black;
 
         font: {
             size: 20px;
             family: $amb-fnt-serif;
-            style: normal;
+            style: italic;
             weight: 300;
         }
     }
@@ -45,31 +43,29 @@
 /* Buttons */
 .amb-activity-interaction {
     margin: {
-        top: 40px;
+        top: 20px;
     }
 
     .amb-button {
         text-align: center;
-        padding:  15px 0;
+        padding:  17px 0;
         width: 51px;
-        color: $amb-clr-blue-drk;
-        border: {
-            color: $amb-clr-blue-drk;
-        }
+        color: $amb-clr-grey;
+        border: none;
     }
 
     .amb-button-positive {
-        &:hover {
-            color: $amb-clr-black;
-            border: {
-                color: $amb-clr-black;
-            }
+
+        color: $amb-clr-white;
+        background: {
+            color: $amb-clr-green;
+
         }
     }
 
     .amb-button-negative {
         &:hover {
-            border-color: $amb-clr-black;
+            background-color: $amb-clr-grey-lgt;
             color: $amb-clr-black;
         }
     }
