@@ -5,6 +5,7 @@
         'amb.sharedData',
         'amb.templates',
         'amb.menu.mainMenu',
+        'amb.login',
         'amb.dashboard',
         'amb.ambitions',
         'amb.records'
