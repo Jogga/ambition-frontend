@@ -18,7 +18,7 @@
     background: {
         color: $amb-clr-white;
     }
-    @include box-shadow(rgba($amb-clr-grey, 0.25) 0px 1px 0px);
+    // @include box-shadow(rgba($amb-clr-grey, 0.25) 0px 1px 0px);
 
     // Children
     a {

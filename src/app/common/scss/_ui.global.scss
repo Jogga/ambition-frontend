@@ -6,15 +6,19 @@
 html {
     min-height: 100%;
     background: {
-        color: $amb-clr-white;
+        color: $amb-clr-grey-xlgt;
     }
 }
 
 
 div[ng-view]{
     max-width: 800px;
+    padding: {
+        top: 51px;
+        left: 20px;
+        right: 20px;
+    }
     margin: {
-        top: 53px;
         right: auto;
         left: auto;
     }
