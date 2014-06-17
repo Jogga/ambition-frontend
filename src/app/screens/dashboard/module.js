@@ -10,7 +10,7 @@
     .config(function ($routeProvider, sharedDataProvider) {
         var mondayOfCurrWeek = exports.moment().startOf('isoweek');
 
-        $routeProvider.when('/', {
+        $routeProvider.when('/activities', {
             templateUrl: 'screens/dashboard/dashboard.tpl.html',
             controller: 'dashboardController',
             resolve: sharedDataProvider.extend({
