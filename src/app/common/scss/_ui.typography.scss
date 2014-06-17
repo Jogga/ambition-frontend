@@ -5,7 +5,7 @@
 
 
 /* Font Stacks */
-$amb-fnt-sans: "omnes-pro", "Helvetica Neue", Arial, sans-serif;
+$amb-fnt-sans: "museo-sans", "Helvetica Neue", Arial, sans-serif;
 $amb-fnt-serif: "freight-display-pro", Georgia, serif;
 
 
@@ -13,5 +13,6 @@ $amb-fnt-serif: "freight-display-pro", Georgia, serif;
 body {
     font: {
         family: $amb-fnt-sans;
+        weight: 300;
     }
 }

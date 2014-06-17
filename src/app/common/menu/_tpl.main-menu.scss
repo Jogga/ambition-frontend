@@ -34,10 +34,10 @@
         text-align: center;
         text-decoration: none;
         text-transform: lowercase;
-        
+
         @include transition-property(color background-position);
         @include transition-duration($amb-tmng-hover-out);
-        background: linear-gradient(to bottom, #ffffff 0px,#ffffff 48px,#09e48c 48px,#09e48c 53px); /* W3C */
+        background: linear-gradient(to bottom, #ffffff 0px,#ffffff 44px,#09e48c 44px,#09e48c 51px); /* W3C */
         background-repeat: no-repeat;
         background-position: 0px 10px;
         // States
