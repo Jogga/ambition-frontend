@@ -6,10 +6,9 @@
 
 /* activity container */
 .amb-activity {
-    padding: 30px 50px;
+    padding: 40px 50px;
     margin: {
-        top: 10px;
-        bottom: 1px;
+        top: 5px;
     }
 
     position: relative;
@@ -130,9 +129,9 @@
         right-width: 0;
         bottom-width: 10px;
         left-width: 15px;
-        top-color: transparent;
-        right-color: transparent;
-        bottom-color: transparent;
+        top-color: transparent !important;
+        right-color: transparent !important;
+        bottom-color: transparent !important;
         left-color: $amb-clr-grey-lgt;
     }
     position: absolute;

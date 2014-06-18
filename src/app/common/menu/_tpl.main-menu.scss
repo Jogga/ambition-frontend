@@ -5,10 +5,10 @@
 
 
 /* Nav Container */
-.amb-nav {
+.amb-menu {
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 
     overflow: hidden;
     width: 100%;
@@ -18,57 +18,109 @@
     background: {
         color: $amb-clr-white;
     }
-    // @include box-shadow(rgba($amb-clr-grey, 0.25) 0px 1px 0px);
-
-    // Children
-    a {
-        display: block;
-        padding: {
-            top: 15px;
-            bottom: 15px;
-            left: 0;
-            right: 0;
-        }
-
-        color: $amb-clr-grey;
-        text-align: center;
-        text-decoration: none;
-        text-transform: lowercase;
-
-        @include transition-property(color background-position);
-        @include transition-duration($amb-tmng-hover-out);
-        background: linear-gradient(to bottom,
-            $amb-clr-white 0px,
-            $amb-clr-white 44px,
-            $amb-clr-black 44px,
-            $amb-clr-black 51px); /* W3C */
-        background-repeat: no-repeat;
-        background-position: 0px 10px;
-        // States
-        &:hover,
-        &:focus {
-            color: $amb-clr-black;
-            @include transition-duration($amb-tmng-hover-in);
-            background-position: 0px 0px;
-        }
-    }
-    .amb-active {
-        color: $amb-clr-black;
-        background-position: 0px 0px;
-        @include transition-duration($amb-tmng-hover-in);
-    }
+    @include box-shadow(rgba($amb-clr-grey, 0.25) 0px 1px 0px);
 }
 
 
-/* Nav List */
-.amb-nav-list {
+// Single Nav Elem
+.amb-nav-elem {
+    display: block;
+    padding: {
+        top: 13px;
+        bottom: 13px;
+        left: 0;
+        right: 0;
+    }
+
+    color: $amb-clr-grey;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+
+    @include transition-property(color background-position);
+    @include transition-duration($amb-tmng-hover-out);
+    background: linear-gradient(to bottom,
+        $amb-clr-white 0px,
+        $amb-clr-white 40px,
+        $amb-clr-black 40px,
+        $amb-clr-black 47px); /* W3C */
+    background-repeat: no-repeat;
+    background-position: 0px 10px;
+    // States
+    &:hover,
+    &:focus {
+        color: $amb-clr-black;
+        @include transition-duration($amb-tmng-hover-in);
+        background-position: 0px 0px;
+    }
+}
+.amb-nav-elem.amb-active {
+    color: $amb-clr-black;
+    background-position: 0px 0px;
+    @include transition-duration($amb-tmng-hover-in);
+}
+
+
+/* Main Navigation */
+.amb-nav-main {
+    clear: left;
     max-width: 800px;
     padding: 0;
     margin: 0 auto;
 
-    li {
+    .amb-nav-elem {
         float: left;
-        width: 25%;
-        list-style-type: none;
+        width: 33.333%;
+    }
+}
+
+
+/* Meta Navigation */
+.amb-nav-meta {
+    max-width: 800px;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    overflow: hidden;
+
+    // Children
+    .amb-profile-pic {
+        display: block;
+        //float: right;
+        overflow:hidden;
+
+        height: 47px;
+        width: 47px;
+        border: {
+            width:5px;
+            color: $amb-clr-white;
+            style: solid;
+        }
+        margin: {
+            top: 0;
+            left: auto;
+            right: auto;
+            bottom: 0;
+        }
+        background: {
+            color: $amb-clr-grey;
+        }
+
+        @include border-radius(50%);
+        @include transition-property(border-color);
+        @include transition-duration($amb-tmng-hover-out);
+
+        &:hover {
+            border: {
+                color: $amb-clr-black;
+            }
+            @include transition-duration($amb-tmng-hover-in);
+        }
+        img {
+            height: auto;
+            width: 100%;
+        }
+
     }
 }
