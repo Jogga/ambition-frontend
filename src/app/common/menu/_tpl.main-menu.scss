@@ -17,9 +17,9 @@
     margin: 0;
 
     background: {
-        color: $amb-clr-white;
+        color: $amb-clr-grey-xlgt;
     }
-    @include box-shadow(rgba($amb-clr-grey, 0.25) 0px 1px 0px);
+    //@include box-shadow(rgba($amb-clr-black, 0.33) 0px 2px 0px);
 }
 
 
@@ -54,8 +54,8 @@
     // Style, Effects
     background: {
         image:linear-gradient(to bottom,
-            $amb-clr-white 0px,
-            $amb-clr-white 50px,
+            $amb-clr-grey-xlgt 0px,
+            $amb-clr-grey-xlgt 50px,
             $amb-clr-black 50px,
             $amb-clr-black 55px); /* W3C */
         repeat: no-repeat;
@@ -68,13 +68,13 @@
     .amb-nav-icon {
         display: block;
         padding: {
-            top: 8px;
-            bottom: 8px;
+            top: 9px;
+            bottom: 9px;
         }
         line-height: 0;
         svg {
-            width: 39px;
-            height: 39px;
+            width: 37px;
+            height: 37px;
         }
     }
     .amb-nav-label {
@@ -88,8 +88,10 @@
         display: none;
     }
     .amb-icon-path {
-        fill: $amb-clr-grey;
-        @include transition-property(fill);
+        fill: none;
+        stroke: $amb-clr-grey;
+        stroke-width: 2;
+        @include transition-property(stroke);
         @include transition-duration($amb-tmng-hover-out);
     }
 
@@ -101,7 +103,7 @@
         @include transition-duration($amb-tmng-hover-in);
 
         .amb-icon-path {
-            fill: $amb-clr-black;
+            stroke: $amb-clr-black;
             @include transition-duration($amb-tmng-hover-in);
         }
     }
@@ -131,7 +133,7 @@
     background-position: 0px 0px;
 
     .amb-icon-path {
-        fill: $amb-clr-black;
+        stroke: $amb-clr-black;
     }
 }
 
