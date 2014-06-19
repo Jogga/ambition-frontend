@@ -1,10 +1,50 @@
 <header class="amb-menu">
-    <nav class="amb-nav-meta">
-        <a href="" class="amb-profile-pic"><img src="assets/img/avatar-aaa.jpg" alt=""></a>
-    </nav>
     <nav class="amb-nav-main">
-        <a href="#/activities" class ="amb-nav-elem" ng-class="{'amb-active':isActive('/activities')}">Activities</a>
-        <a href="#/ambitions" class="amb-nav-elem" ng-class="{'amb-active':isActive('/ambitions')}">Ambitions</a>
-        <a href="#/records" class="amb-nav-elem" ng-class="{'amb-active':isActive('/records')}">Records</a>
+
+        <a href="#/activities" class ="amb-nav-elem" ng-class="{'amb-active':isActive('/activities')}">
+            <span class="amb-nav-icon">
+                <?xml version="1.0" encoding="utf-8"?>
+                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                    <polygon class="amb-icon-path" points="19.5,17.6 4.1,37.4 18.4,30.8 26.1,38.5 45.9,11.9 26.1,24.2 "/>
+                </svg>
+            </span>
+            <span class="amb-nav-label">Activities</span>
+        </a>
+
+        <a href="#/ambitions" class="amb-nav-elem" ng-class="{'amb-active':isActive('/ambitions')}">
+            <span class="amb-nav-icon">
+                <?xml version="1.0" encoding="utf-8"?>
+                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                    <polygon class="amb-icon-path" points="11,30.7 31.1,7 40.3,43.4 24.6,24.4 "/>
+                </svg>
+            </span>
+            <span class="amb-nav-label">Ambitions</span>
+        </a>
+
+        <a href="#/records" class="amb-nav-elem" ng-class="{'amb-active':isActive('/records')}">
+            <span class="amb-nav-icon">
+                <?xml version="1.0" encoding="utf-8"?>
+                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                    <polygon class="amb-icon-path" points="5.1,35 19.7,20 24.2,25.3 40,9.4 40,35 "/>
+                </svg>
+            </span>
+            <span class="amb-nav-label">Records</span>
+        </a>
+
+        <a href="#/profile" class="amb-nav-elem amb-nav-profile" ng-class="{'amb-active':isActive('/profile')}">
+            <img src="assets/img/avatar-aaa.jpg" alt="">
+        </a>
+
+        <a href="#/settings" class="amb-nav-elem amb-nav-settings" ng-class="{'amb-active':isActive('/settings')}">
+            <span class="amb-nav-icon">
+                <?xml version="1.0" encoding="utf-8"?>
+                <svg version="1.1" id="settings" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                    <path class="amb-icon-path" d="M39,27v-4h-5.2c-0.2-1-0.6-2-1.2-2.8l3.7-3.7l-2.8-2.8l-3.7,3.7C29,16.8,28,16.4,27,16.2V11h-4v5.2c-1,0.2-2,0.6-2.8,1.2
+    	l-3.7-3.7l-2.8,2.8l3.7,3.7C16.8,21,16.4,22,16.2,23H11v4h5.2c0.2,1,0.6,2,1.2,2.8l-3.7,3.7l2.8,2.8l3.7-3.7
+    	c0.9,0.5,1.8,0.9,2.8,1.2V39h4v-5.2c1-0.2,2-0.6,2.8-1.2l3.7,3.7l2.8-2.8l-3.7-3.7c0.5-0.9,0.9-1.8,1.2-2.8H39z"/>
+                </svg>
+            </span>
+            <span class="amb-nav-label">Settings</span>
+        </a>
     </nav>
 </header>

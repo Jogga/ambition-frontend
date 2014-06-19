@@ -4,9 +4,12 @@
 // Utilities
 @import "util.normalize";
 
+// Variables
+@import "var.colors";
+@import "var.timing";
+@import "var.breakpoints";
+
 // UI
-@import "ui.colors";
-@import "ui.timing";
 @import "ui.typography";
 @import "ui.grid";
 @import "ui.global";

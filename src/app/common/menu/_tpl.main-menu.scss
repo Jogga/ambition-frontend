@@ -8,6 +8,7 @@
 .amb-menu {
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 2;
 
     overflow: hidden;
@@ -22,16 +23,22 @@
 }
 
 
+/* Main Navigation Container */
+.amb-nav-main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
 /* Single Nav Elem */
 .amb-nav-elem {
-    display: block;
-    padding: {
-        top: 13px;
-        bottom: 13px;
-        left: 0;
-        right: 0;
-    }
 
+    // Boxmodel, Size
+    display: block;
+    float: left;
+    width: 20%;
+
+    // Typography
     color: $amb-clr-grey;
     font: {
         family: $amb-fnt-sans;
@@ -44,95 +51,160 @@
     }
     -webkit-font-smoothing: antialiased;
 
+    // Style, Effects
     background: {
         image:linear-gradient(to bottom,
             $amb-clr-white 0px,
-            $amb-clr-white 40px,
-            $amb-clr-black 40px,
-            $amb-clr-black 47px); /* W3C */
+            $amb-clr-white 50px,
+            $amb-clr-black 50px,
+            $amb-clr-black 55px); /* W3C */
         repeat: no-repeat;
-        position: 0px 10px;
+        position: 0px 5px;
     }
     @include transition-property(color background-position);
     @include transition-duration($amb-tmng-hover-out);
+
+    // Children
+    .amb-nav-icon {
+        display: block;
+        padding: {
+            top: 8px;
+            bottom: 8px;
+        }
+        line-height: 0;
+        svg {
+            width: 39px;
+            height: 39px;
+        }
+    }
+    .amb-nav-label {
+        height: 15px;
+        padding: {
+            top: 20px;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+        }
+        display: none;
+    }
+    .amb-icon-path {
+        fill: $amb-clr-grey;
+        @include transition-property(fill);
+        @include transition-duration($amb-tmng-hover-out);
+    }
 
     // States
     &:hover,
     &:focus {
         color: $amb-clr-black;
-        @include transition-duration($amb-tmng-hover-in);
         background-position: 0px 0px;
+        @include transition-duration($amb-tmng-hover-in);
+
+        .amb-icon-path {
+            fill: $amb-clr-black;
+            @include transition-duration($amb-tmng-hover-in);
+        }
     }
 }
 
-/* Active Main Nav Element */
+@mixin amb-nav-elem-m () {
+    .amb-nav-elem {
+        width: 25%;
+
+        // Children
+        .amb-nav-icon {
+            display: none;
+        }
+        .amb-nav-label {
+            display: block
+        }
+    }
+}
+
+
+/*
+ * Main Nav Element
+ * State: Active
+ */
 .amb-nav-elem.amb-active {
     color: $amb-clr-black;
     background-position: 0px 0px;
-    @include transition-duration($amb-tmng-hover-in);
-}
 
-
-/* Main Navigation */
-.amb-nav-main {
-    clear: left;
-    max-width: 800px;
-    padding: 0;
-    margin: 0 auto;
-
-    .amb-nav-elem {
-        float: left;
-        width: 33.333%;
+    .amb-icon-path {
+        fill: $amb-clr-black;
     }
 }
 
 
-/* Meta Navigation */
-.amb-nav-meta {
-    max-width: 800px;
+
+/* Special Nav elements*/
+
+/* Profile Nav Tab */
+.amb-nav-profile {
+    height: 41px;
     padding: {
-        top: 2px;
-        bottom: 4px;
-    }
-    margin: {
-        left: auto;
-        right: auto;
+        top: 7px;
+        bottom: 7px;
     }
 
     // Children
-    .amb-profile-pic {
+    // Profile Tab displays a Profile Picture
+    img {
         display: block;
-        position: relative;
-        z-index: 1;
-
-        height: 48px;
-        width: 48px;
+        height: 41px;
+        width: 41px;
         margin: {
-            top: 0;
             left: auto;
             right: auto;
-            bottom: 0;
         }
-        background: {
-            color: $amb-clr-grey;
-        }
-
-
-        &:hover {
-            img {
-                @include transition-duration(50ms);
-                @include box-shadow($amb-clr-grey-lgt 0px 0px 0px 7px);
-            }
-        }
-        img {
-            display: block;
-            height: auto;
-            width: 100%;
-            @include transition-property(box-shadow);
-            @include transition-duration(100ms);
-            @include box-shadow($amb-clr-grey-lgt 0px 0px 0px 0px);
-            @include border-radius(50%);
-        }
-
+        @include border-radius(50%);
     }
+}
+
+@mixin amb-nav-profile-m () {
+    .amb-nav-profile {
+        width: 12.5%;
+    }
+}
+
+
+
+/* Settings Nav Tab */
+.amb-nav-settings {
+
+    // Children
+    // Settings-Tab displays a icon by default
+    .amb-nav-label {
+        display: none;
+    }
+    .amb-nav-icon {
+        display: block;
+    }
+}
+
+@mixin amb-nav-settings-m () {
+    .amb-nav-settings {
+        width: 12.5%;
+
+        .amb-nav-label {
+            display: none;
+        }
+        .amb-nav-icon {
+            display: block;
+        }
+    }
+}
+
+
+/* Mixin Collections for responsive Styles */
+@mixin amb-nav-mixins-m () {
+    @include amb-nav-elem-m();
+    @include amb-nav-profile-m();
+    @include amb-nav-settings-m();
+}
+
+
+/* Mediaqueries */
+@media screen and (min-width: $amb-break-m) {
+    @include amb-nav-mixins-m();
 }
