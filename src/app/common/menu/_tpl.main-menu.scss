@@ -22,7 +22,7 @@
 }
 
 
-// Single Nav Elem
+/* Single Nav Elem */
 .amb-nav-elem {
     display: block;
     padding: {
@@ -33,19 +33,29 @@
     }
 
     color: $amb-clr-grey;
-    text-align: center;
-    text-decoration: none;
-    text-transform: lowercase;
+    font: {
+        family: $amb-fnt-sans;
+        weight: 700;
+    }
+    text: {
+        align: center;
+        decoration: none;
+        transform: lowercase;
+    }
+    -webkit-font-smoothing: antialiased;
 
+    background: {
+        image:linear-gradient(to bottom,
+            $amb-clr-white 0px,
+            $amb-clr-white 40px,
+            $amb-clr-black 40px,
+            $amb-clr-black 47px); /* W3C */
+        repeat: no-repeat;
+        position: 0px 10px;
+    }
     @include transition-property(color background-position);
     @include transition-duration($amb-tmng-hover-out);
-    background: linear-gradient(to bottom,
-        $amb-clr-white 0px,
-        $amb-clr-white 40px,
-        $amb-clr-black 40px,
-        $amb-clr-black 47px); /* W3C */
-    background-repeat: no-repeat;
-    background-position: 0px 10px;
+
     // States
     &:hover,
     &:focus {
@@ -54,6 +64,8 @@
         background-position: 0px 0px;
     }
 }
+
+/* Active Main Nav Element */
 .amb-nav-elem.amb-active {
     color: $amb-clr-black;
     background-position: 0px 0px;
@@ -78,25 +90,23 @@
 /* Meta Navigation */
 .amb-nav-meta {
     max-width: 800px;
+    padding: {
+        top: 2px;
+        bottom: 4px;
+    }
     margin: {
         left: auto;
         right: auto;
     }
-    overflow: hidden;
 
     // Children
     .amb-profile-pic {
         display: block;
-        //float: right;
-        overflow:hidden;
+        position: relative;
+        z-index: 1;
 
-        height: 47px;
-        width: 47px;
-        border: {
-            width:5px;
-            color: $amb-clr-white;
-            style: solid;
-        }
+        height: 48px;
+        width: 48px;
         margin: {
             top: 0;
             left: auto;
@@ -107,19 +117,21 @@
             color: $amb-clr-grey;
         }
 
-        @include border-radius(50%);
-        @include transition-property(border-color);
-        @include transition-duration($amb-tmng-hover-out);
 
         &:hover {
-            border: {
-                color: $amb-clr-black;
+            img {
+                @include transition-duration(50ms);
+                @include box-shadow($amb-clr-grey-lgt 0px 0px 0px 7px);
             }
-            @include transition-duration($amb-tmng-hover-in);
         }
         img {
+            display: block;
             height: auto;
             width: 100%;
+            @include transition-property(box-shadow);
+            @include transition-duration(100ms);
+            @include box-shadow($amb-clr-grey-lgt 0px 0px 0px 0px);
+            @include border-radius(50%);
         }
 
     }
