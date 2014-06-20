@@ -37,6 +37,7 @@ module.exports = function (grunt) {
             dev: {
                 options: {
                     sassDir: '_tmp',
+                    imageDir: 'assets/img',
                     cssDir: '_build',
                     environment: 'development'
                 }

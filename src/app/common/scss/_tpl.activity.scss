@@ -6,76 +6,101 @@
 
 /* activity container */
 .amb-activity {
-    padding: 40px 50px;
+    height: 400px;
+    width: 400px;
     margin: {
-        top: 5px;
+        top: 40px;
+        left: auto;
+        right: auto;
+        bottom: 70px;
     }
 
     position: relative;
+    text-align: center;
 
     background: {
-        color: $amb-clr-white;
+        color: $amb-clr-grey;
+        image: image-url("activity-01.jpg");
+        repeat: no-repeat;
+        size: 100%;
     }
-    text-align: left;
+    color: $amb-clr-white;
+    @include border-radius(50%);
 
-    /* Ambition name */
+    /* Parent Element: Ambition */
+    .amb-ambition {
+        position: relative;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
     .amb-ambition-name {
         margin: 0;
-        color: $amb-clr-black;
 
+        position: relative;
+        z-index: 1;
+
+        color: $amb-clr-white;
         font: {
-            size: 20px;
+            size: 22px;
             family: $amb-fnt-serif;
-            style: italic;
+            style: normal;
             weight: 300;
         }
+        @include text-shadow( rgba($amb-clr-black, 1) 0px 0px 10px);
     }
 }
 
 
 
 /* Exercise Name */
-.amb-activity-exercise {
+.amb-activity-name {
     margin: 0;
-    color: $amb-clr-black;
+    padding: 0 20px;
     font: {
+        family: $amb-fnt-sans;
         size: 32px;
+        weight: 700;
     }
     line-height: 1em;
+    @include text-shadow( rgba($amb-clr-black, 1) 0px 0px 10px);
 }
 
 
 
 /* Ambition name, Activity Desc */
 .amb-activity-desc {
-    margin-right: 80px;
+    padding-top: 140px;
 }
 
 
 
 /* Buttons */
 .amb-activity-interaction {
-    float: right;
 
     .amb-button {
+
+        // Box
         display: block;
+        padding: 10px 0;
+        width: 90px;
+        border: none;
+        margin: 20px auto;
+
+        // Skin
         text-align: center;
-        padding:  19px 0;
-        width: 59px;
-        color: $amb-clr-grey-lgt;
-        border: {
-            width: 2px;
-            color: $amb-clr-grey-lgt;
-            style: solid;
+        color: $amb-clr-white;
+        background: {
+            color: $amb-clr-green;
         };
-        @include border-radius(33px);
+        @include border-radius(0);
     }
 
     .amb-button-positive {
         &:hover {
-            color: $amb-clr-green;
-            border: {
-                color: $amb-clr-green;
+            color: $amb-clr-white;
+            background: {
+                color: $amb-clr-blue;
             }
         }
     }

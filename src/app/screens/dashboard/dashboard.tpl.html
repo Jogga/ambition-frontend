@@ -1,15 +1,14 @@
 <div ng-repeat="activity in getActivitiesForToday()" class="amb-activity">
+    <div class="amb-activity-desc">
+        <div class="amb-ambition">
+            <div class="amb-ambition-name">to {{activity.ambition.name}},</div>
+        </div>
+        <h2 class="amb-activity-name">did you {{activity.exercise}} today?</h2>
+    </div>
     <div class="amb-activity-interaction">
         <button class="amb-button amb-button-positive" ng-click="checkActivity(activity)">Yes</button>
         <!-- <button class="amb-button amb-button-negative" ng-click="missActivity(activity)">No</button> -->
     </div>
-    <div class="amb-activity-desc">
-        <p class="amb-ambition-name">to {{activity.ambition.name}},</p>
-        <h2 class="amb-activity-exercise">did you {{activity.exercise}} today?</h2>
-    </div>
-    <div class="amb-activity-timeline-arrow">&nbsp;</div>
-    <div class="amb-activity-timeline">&nbsp;</div>
-    <div class="amb-activity-timeline future">&nbsp;</div>
 </div>
 
 <!--
