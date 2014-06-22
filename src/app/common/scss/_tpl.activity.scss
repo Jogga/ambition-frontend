@@ -6,39 +6,34 @@
 
 /* activity container */
 .amb-activity {
-    height: 400px;
-    width: 400px;
+
+    // Box
     margin: {
         top: 40px;
         left: auto;
         right: auto;
         bottom: 70px;
     }
+    padding: 0;
+    max-width: 400px;
 
+    // Pos
     position: relative;
     text-align: center;
 
-    background: {
-        color: $amb-clr-grey;
-        image: image-url("activity-01.jpg");
-        repeat: no-repeat;
-        size: 100%;
-    }
+    // Skin
     color: $amb-clr-white;
+    background: {
+        color: $amb-clr-blue;
+    }
     @include border-radius(50%);
 
-    /* Parent Element: Ambition */
-    .amb-ambition {
-        position: relative;
-        max-width: none;
-        margin: 0;
-        padding: 0;
-    }
+    // Children
+    // Name of Ambition to which this activity belongs
     .amb-ambition-name {
         margin: 0;
 
         position: relative;
-        z-index: 1;
 
         color: $amb-clr-white;
         font: {
@@ -49,6 +44,66 @@
         }
         @include text-shadow( rgba($amb-clr-black, 1) 0px 0px 10px);
     }
+
+    // Potential Mood Picture
+    .amb-ambition-moodpic {
+        display: block;
+        height: auto;
+        width: 100%;
+        @include border-radius(50%);
+    }
+
+    .amb-activity-interaction {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+    }
+    // Button show that this activity is done
+    .amb-button {
+        // Box
+        display: block;
+        padding: 10px;
+        border: none;
+        margin: {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: auto;
+        };
+
+        // Skin
+        text-align: center;
+        color: $amb-clr-white;
+        background: {
+            color: $amb-clr-turquois;
+        }
+        line-height: 0;
+        @include border-radius(50%);
+
+        // FX
+        @include box-shadow(rgba($amb-clr-black, 0.33) 0px 0px 0px 0px);
+        @include transition-property(box-shadow);
+        @include transition-duration($amb-tmng-hover-out);
+
+        // Children
+        svg {
+            width: 60px;
+            height: 60px;
+        }
+        .amb-icon-path {
+            stroke: $amb-clr-white;
+            stroke-width: 1;
+
+        }
+
+        // States
+        &:hover {
+            cursor: pointer;
+            @include transition-duration($amb-tmng-hover-in);
+            @include box-shadow(rgba($amb-clr-black, 0.33) 0px 0px 0px 10px);
+        }
+    }
 }
 
 
@@ -56,7 +111,7 @@
 /* Exercise Name */
 .amb-activity-name {
     margin: 0;
-    padding: 0 20px;
+
     font: {
         family: $amb-fnt-sans;
         size: 32px;
@@ -70,64 +125,29 @@
 
 /* Ambition name, Activity Desc */
 .amb-activity-desc {
-    padding-top: 140px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    @include transform(translateY(-50%) translateX(-50%));
 }
 
-
-
-/* Buttons */
-.amb-activity-interaction {
-
-    .amb-button {
-
-        // Box
-        display: block;
-        padding: 10px 0;
-        width: 90px;
-        border: none;
-        margin: 20px auto;
-
-        // Skin
-        text-align: center;
-        color: $amb-clr-white;
-        background: {
-            color: $amb-clr-green;
-        };
-        @include border-radius(0);
-    }
-
-    .amb-button-positive {
-        &:hover {
-            color: $amb-clr-white;
-            background: {
-                color: $amb-clr-blue;
-            }
-        }
-    }
-
-    .amb-button-negative {
-        &:hover {
-            background-color: $amb-clr-grey-lgt;
-            color: $amb-clr-black;
-        }
-    }
-}
 
 
 
 /* Timeline */
 .amb-activity-timeline {
-    width: 100%;
+    width: 300%;
     height: 0px;
     border: {
-        color: $amb-clr-grey-lgt;
+        color: $amb-clr-turquois;
         width: 0;
         top-width: 2px;
         style: solid;
     }
 
     position: absolute;
-    left: -100%;
+    left: -200%;
     top: 50%;
     z-index: -1;
 
@@ -162,7 +182,6 @@
     position: absolute;
     left: -10px;
     top: 50%;
-    z-index: 1;
 
     @include transform(translateY(-50%));
 }
