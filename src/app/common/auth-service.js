@@ -22,7 +22,12 @@
         }
 
         function loggedIn() {
-            return localStorage.getAccessToken() ? true : false;
+            var token = localStorage.getAccessToken();
+            if (token) {
+                $http.defaults.headers.common.Authorization = 'Baerer ' + token;
+                return true;
+            }
+            return false;
         }
 
         return {
