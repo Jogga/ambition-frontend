@@ -1,0 +1,52 @@
+/**
+ * login screen styles for ambition.me
+ * @author Jogga <joachim@froestl.com>
+ */
+
+.amb-screen-login {
+
+    min-height: 100%;
+
+    // Children
+    // Branding
+    h1 {
+        color: $amb-clr-turquois;
+    }
+
+    // Logo
+    .amb-login-logo {
+        width: 100px;
+        height: 100px;
+
+        .amb-icon-path {
+            stroke: none;
+            fill: $amb-clr-turquois;
+        }
+    }
+
+    form {
+        // Box
+        width: 50%;
+        padding: 30px;
+        @include box-sizing(border-box);
+        float: left;
+
+        input {
+            // Box
+            display: block;
+            width: 100%;
+            padding: 6px;
+            border: {
+                width: 1px;
+                color: $amb-clr-grey-lgt;
+                style: solid;
+            }
+            @include box-sizing(border-box);
+
+            // Skin
+            background: {
+                color: $amb-clr-white;
+            }
+        }
+    }
+}

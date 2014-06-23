@@ -1,6 +1,35 @@
-<h1>Login</h1>
+<div class="amb-screen-login">
+    <div class="amb-login-logo">
+        <?xml version="1.0" encoding="utf-8"?>
+        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+            <polygon class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+            11,30.7 31.1,7 40.3,43.4 24.6,24.4 "/>
+        </svg>
+    </div>
+    <h1>commit to your ambitions</h1>
 
-<input type="text" ng-model="loginData.email" />
-<input type="password" ng-model="loginData.password" />
+    <form>
+        <h2>New to ambition? Sign up.</h2>
 
-<button ng-click="login(loginData)">Login</button>
+        <label for="amb-signup-username">username</label>
+        <input id="amb-signup-username" type="text" ng-model="" />
+
+        <label for="amb-signup-email">email</label>
+        <input id="amb-signup-email" type="text" ng-model="" />
+
+        <label for="amb-signup-password">password</label>
+        <input id="amb-signup-password" type="password" ng-model="l" />
+
+        <button ng-click="">Register</button>
+    </form>
+
+    <form>
+        <label for="amb-login-id">username or email</label>
+        <input id="amb-login-id" type="text" ng-model="loginData.email" />
+
+        <label for="amb-login-password">password</label>
+        <input id="amb-login-password" type="password" ng-model="loginData.password" />
+
+        <button ng-click="login(loginData)">Login</button>
+    </form>
+</div>
