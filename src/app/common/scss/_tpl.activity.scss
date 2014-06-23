@@ -23,10 +23,6 @@
 
     // Skin
     color: $amb-clr-white;
-    background: {
-        color: $amb-clr-blue;
-    }
-    @include border-radius(50%);
 
     // Children
     // Name of Ambition to which this activity belongs
@@ -42,7 +38,7 @@
             style: normal;
             weight: 300;
         }
-        @include text-shadow( rgba($amb-clr-black, 1) 0px 0px 10px);
+        @include text-shadow(rgba($amb-clr-black, 1) 0px 0px 10px);
     }
 
     // Potential Mood Picture
@@ -56,10 +52,9 @@
     .amb-activity-interaction {
         position: absolute;
         bottom: 0;
-        z-index: 1;
         width: 100%;
     }
-    // Button show that this activity is done
+    // Button do set activity as done
     .amb-button {
         // Box
         display: block;
@@ -88,8 +83,8 @@
 
         // Children
         svg {
-            width: 60px;
-            height: 60px;
+            width: 62px;
+            height: 62px;
         }
         .amb-icon-path {
             stroke: $amb-clr-white;
@@ -125,8 +120,17 @@
 
 /* Ambition name, Activity Desc */
 .amb-activity-desc {
-    position: absolute;
+
+    // Box
+    padding: {
+        left: 20px;
+        right: 20px;
+    }
     width: 100%;
+    @include box-sizing(border-box);
+
+    // Pos
+    position: absolute;
     top: 50%;
     left: 50%;
     @include transform(translateY(-50%) translateX(-50%));
@@ -142,7 +146,7 @@
     border: {
         color: $amb-clr-turquois;
         width: 0;
-        top-width: 2px;
+        top-width: 4px;
         style: solid;
     }
 
