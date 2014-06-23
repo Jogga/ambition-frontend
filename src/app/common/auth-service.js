@@ -6,8 +6,6 @@
         'amb.localStorage'
     ]).factory('AuthService', function ($location, $http, User, localStorage) {
 
-        var currentUser;
-
         function login(email, password) {
 
             return User.login({email: email, password: password}).$promise.then(function (res) {

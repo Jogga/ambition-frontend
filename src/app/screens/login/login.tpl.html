@@ -12,24 +12,24 @@
         <h2>New to ambition? Sign up.</h2>
 
         <label for="amb-signup-username">username</label>
-        <input id="amb-signup-username" type="text" ng-model="" />
+        <input id="amb-signup-username" type="text" ng-model="registerMe.username" />
 
         <label for="amb-signup-email">email</label>
-        <input id="amb-signup-email" type="text" ng-model="" />
+        <input id="amb-signup-email" type="text" ng-model="registerMe.email" />
 
         <label for="amb-signup-password">password</label>
-        <input id="amb-signup-password" type="password" ng-model="l" />
+        <input id="amb-signup-password" type="password" ng-model="registerMe.password" />
 
-        <button ng-click="">Register</button>
+        <button ng-click="register(registerMe)">Register</button>
     </form>
 
     <form>
         <label for="amb-login-id">username or email</label>
-        <input id="amb-login-id" type="text" ng-model="loginData.email" />
+        <input id="amb-login-id" type="text" ng-model="logMeIn.email" />
 
         <label for="amb-login-password">password</label>
-        <input id="amb-login-password" type="password" ng-model="loginData.password" />
+        <input id="amb-login-password" type="password" ng-model="logMeIn.password" />
 
-        <button ng-click="login(loginData)">Login</button>
+        <button ng-click="login(logMeIn)">Login</button>
     </form>
 </div>

@@ -2,6 +2,7 @@
     'use strict';
 
     exports.angular.module('amb.sharedData', [
+        'amb.model.User',
         'amb.model.Ambition'
     ])
     .provider('sharedData', SharedDataProvider);
@@ -16,6 +17,12 @@
                     cache.ambitionList = Ambition.query();
                 }
                 return cache.ambitionList;
+            },
+            currentUser: function (User) {
+                if (!cache.currentUser) {
+                    cache.currentUser = User.me();
+                }
+                return cache.currentUser;
             }
         };
 

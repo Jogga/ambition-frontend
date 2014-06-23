@@ -1,10 +1,12 @@
 (function(sandbox) {
     'use strict';
-    sandbox.angular.module('amb.menu.mainMenu', [])
+    sandbox.angular.module('amb.menu.mainMenu', [
+        'amb.common.AuthService'
+    ])
     .directive('mainMenu', mainMenu);
 
 
-    function mainMenu($location) {
+    function mainMenu($location, AuthService) {
         // body...
         return {
             replace: true,
@@ -14,6 +16,7 @@
         };
 
         function linkFn(scope, el, attrs) {
+
             scope.isActive = function (path) {
                 if ($location.path().substr(0, path.length) === path) {
                     return true;
@@ -21,6 +24,11 @@
                     return false;
                 }
             };
+
+            scope.isLoggedIn = function () {
+                return AuthService.loggedIn();
+            };
+
         }
     }
 

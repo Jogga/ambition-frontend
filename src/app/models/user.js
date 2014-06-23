@@ -12,6 +12,10 @@
         var User = $resource(baseUrl, {
             id: '@id'
         }, {
+            me: {
+                method: 'GET',
+                url: baseUrl + '/me'
+            },
             signup: {
                 method: 'POST',
                 url: routes.signup,
