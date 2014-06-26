@@ -11,7 +11,12 @@
 
         var Ambition = $resource(AMBITIONS_URL, {
             id: '@id'
-        }, {});
+        }, {
+            update: {
+                method: 'PUT',
+                url: AMBITIONS_URL
+            }
+        });
 
         return Ambition;
 
