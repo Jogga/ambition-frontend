@@ -1,0 +1,11 @@
+<input ng-show="editModeActive" type="text" on-enter="save()" on-esc="cancel()" ng-model="model" >
+
+<div ng-if="editModeActive">
+    <button ng-click="cancel()">cancel</button>
+    <button ng-click="save()">save</i></button>
+</div>
+
+<span ng-mouseenter="showEdit = true" ng-mouseleave="showEdit = false">
+    <span ng-hide="editModeActive" ng-click="edit()">{{model}}</span>
+    <button ng-show="showEdit" ng-click="edit()">edit</i></button>
+</span>
