@@ -11,6 +11,13 @@
 
         $scope.ambitions = sharedData.ambitionList;
 
+        $scope.updateAmbition = function (ambition, updates, property) {
+            if (property && updates) {
+                ambition[property] = updates;
+            }
+            ambition.$update();
+        };
+
         $scope.deleteAmbition = function (ambition) {
             ambition.$remove().then(function (success) {
                 for (var i = 0, max = $scope.ambitions.length; i < max; i++) {

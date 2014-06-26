@@ -7,13 +7,11 @@
 </div>
 
 <div ng-repeat="ambition in ambitions" class="amb-ambition">
-    <p class="amb-ambition-name">to {{ambition.name}},</p>
+
+    <p class="amb-ambition-name">to <span inline-edit="ambition.name" on-save="updateAmbition(ambition, updates, 'name')"></span></p>    
+
     <div ng-repeat="activity in ambition.activities">
-        <h2 class="amb-ambition-activity">did you {{activity.exercise}} today?</h2>
-        <div class="amb-ambition-interaction">
-            <button class="amb-button amb-button-positive" ng-click="checkActivity(activity)">Yes</button>
-            <button class="amb-button amb-button-negative" ng-click="missActivity(activity)">No</button>
-        </div>
+        <h2 class="amb-ambition-activity">{{activity.exercise}}</h2>
     </div>
 
     <!-- <button ng-click="deleteAmbition(ambition)" class="amb-button amb-button-negative">Delete</button> -->
