@@ -1,7 +1,7 @@
 <div>
     <ul>
         <li ng-repeat="record in records | orderBy:'created_at':true">
-            {{record.createdAt | moment}} - {{record.success}} - {{getAmbition(record.ambitionId).name}}
+            {{record.createdAt | moment}} - {{record.success}} - {{getAmbition(record.ambition).name}}
             <button class="amb-button" ng-click="removeRecord(record)">x</button>
         </li>
     </ul>

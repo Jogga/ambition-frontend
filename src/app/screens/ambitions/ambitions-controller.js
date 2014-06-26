@@ -27,23 +27,7 @@
                     }
                 }
             });
-        };
-
-        $scope.checkActivity = function (activity) {
-            ActivityRecord.save({
-                success: true,
-                activity: activity.id,
-                ambition: activity.ambitionId
-            });
-        };
-
-        $scope.missActivity = function (activity) {
-            ActivityRecord.save({
-                success: false,
-                activity: activity.id,
-                ambition: activity.ambitionId
-            });
-        };
+        };        
     }
 
 }(this));
