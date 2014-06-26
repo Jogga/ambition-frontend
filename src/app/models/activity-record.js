@@ -3,9 +3,10 @@
 
     sandbox.angular.module('amb.model.ActivityRecord', [
         'ngResource',
-        'amb.config.routes'
+        'amb.routes'
     ])
     .factory('ActivityRecord', function ($resource, routes) {
+        console.log(routes);
 
         var URL = routes.recordsUrl + '/:id';
 

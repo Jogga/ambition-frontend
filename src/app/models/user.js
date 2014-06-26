@@ -3,7 +3,7 @@
 
     sandbox.angular.module('amb.model.User', [
         'ngResource',
-        'amb.config.routes'
+        'amb.routes'
     ])
     .factory('User', function ($resource, routes) {
 

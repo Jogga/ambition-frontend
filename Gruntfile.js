@@ -18,7 +18,7 @@ module.exports = function (grunt) {
                 dest: '_build/libs.js'
             },
             scripts: {
-                src: ['src/app/config/config.js', 'src/**/*.js', '!src/**/*.spec.js'],
+                src: ['src/**/*.js', '!src/**/*.spec.js'],
                 dest: '_build/app.js'
             }
         },

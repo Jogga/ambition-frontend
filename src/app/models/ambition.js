@@ -3,7 +3,7 @@
 
     sandbox.angular.module('amb.model.Ambition', [
         'ngResource',
-        'amb.config.routes'
+        'amb.routes'
     ])
     .factory('Ambition', function ($resource, routes) {
 
