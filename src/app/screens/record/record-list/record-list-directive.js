@@ -1,7 +1,7 @@
 (function (exports) {
     'use strict';
 
-    exports.angular.module('amb.records.recordListDirective', [
+    exports.angular.module('amb.record.recordListDirective', [
         'amb.common.momentFilter'
     ])
     .directive('recordList', recordList);
@@ -10,7 +10,7 @@
         return {
             restrict: 'E',
             replace: true,
-            templateUrl: 'screens/records/record-list/record-list.tpl.html',
+            templateUrl: 'screens/record/record-list/record-list.tpl.html',
             link: linkFn
         };
 

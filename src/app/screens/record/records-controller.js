@@ -1,13 +1,13 @@
 (function (exports) {
     'use strict';
 
-    exports.angular.module('amb.records.recordsController', [
+    exports.angular.module('amb.record.RecordController', [
         'amb.sharedData',
         'amb.model.ActivityRecord',
-        'amb.records.recordListDirective'
-    ]).controller('recordsController', recordsController);
+        'amb.record.recordListDirective'
+    ]).controller('RecordController', RecordController);
 
-    function recordsController($scope, sharedData, ActivityRecord, recordList) {
+    function RecordController($scope, sharedData, ActivityRecord, recordList) {
         $scope.records = recordList;
         $scope.ambitions = sharedData.ambitionList;
         $scope.removeRecord = function (record) {

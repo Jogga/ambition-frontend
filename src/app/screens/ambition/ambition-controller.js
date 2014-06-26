@@ -1,13 +1,13 @@
 (function (exports) {
     'use strict';
 
-    exports.angular.module('amb.ambitions.AmbitionsController', [
+    exports.angular.module('amb.ambition.AmbitionController', [
         'amb.sharedData',
         'amb.model.Ambition',
         'amb.model.ActivityRecord'
-    ]).controller('ambitionsController', ambitionsController);
+    ]).controller('AmbitionController', AmbitionController);
 
-    function ambitionsController($scope, sharedData, Ambition, ActivityRecord) {
+    function AmbitionController($scope, sharedData, Ambition, ActivityRecord) {
 
         $scope.ambitions = sharedData.ambitionList;
 
@@ -27,7 +27,7 @@
                     }
                 }
             });
-        };        
+        };
     }
 
 }(this));

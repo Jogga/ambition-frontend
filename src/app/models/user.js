@@ -7,14 +7,14 @@
     ])
     .factory('User', function ($resource, routes) {
 
-        var baseUrl = routes.usersUrl + '/:id';
+        var URL = routes.usersUrl + '/:id';
 
-        var User = $resource(baseUrl, {
+        var User = $resource(URL, {
             id: '@id'
         }, {
             me: {
                 method: 'GET',
-                url: baseUrl + '/me'
+                url: URL + '/me'
             },
             signup: {
                 method: 'POST',

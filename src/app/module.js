@@ -8,9 +8,9 @@
         'amb.menu.mainMenu',
         'amb.login',
         'amb.profile',
-        'amb.dashboard',
-        'amb.ambitions',
-        'amb.records'
+        'amb.activity',
+        'amb.ambition',
+        'amb.record'
     ])
     .config(function ($routeProvider) {
         $routeProvider.when('/logout', {

@@ -7,14 +7,14 @@
     ])
     .factory('Ambition', function ($resource, routes) {
 
-        var AMBITIONS_URL = routes.ambitionsUrl + '/:id';
+        var URL = routes.ambitionsUrl + '/:id';
 
-        var Ambition = $resource(AMBITIONS_URL, {
+        var Ambition = $resource(URL, {
             id: '@id'
         }, {
             update: {
                 method: 'PUT',
-                url: AMBITIONS_URL
+                url: URL
             }
         });
 

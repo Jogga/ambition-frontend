@@ -5,9 +5,9 @@
         'ngResource',
         'amb.routes'
     ])
-    .factory('ActivityRecord', function ($resource, routes) {        
+    .factory('ActivityRecord', function ($resource, routes) {
 
-        var URL = routes.recordsUrl + '/:id';
+        var URL = routes.activitiesUrl + '/:activity' + routes.recordsPath + '/:id';
 
         var ActivityRecord = $resource(URL, {
             id: '@id'

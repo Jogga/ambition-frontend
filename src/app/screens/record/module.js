@@ -1,16 +1,16 @@
 (function (exports) {
     'use strict';
 
-    exports.angular.module('amb.records', [
+    exports.angular.module('amb.record', [
         'ngRoute',
         'amb.sharedData',
         'amb.model.ActivityRecord',
-        'amb.records.recordsController'
+        'amb.record.RecordController'
     ])
     .config(function ($routeProvider, sharedDataProvider) {
         $routeProvider.when('/records', {
-            templateUrl: 'screens/records/records.tpl.html',
-            controller: 'recordsController',
+            templateUrl: 'screens/record/record.tpl.html',
+            controller: 'RecordController',
             resolve: sharedDataProvider.extend ({
                 recordList: function (ActivityRecord) {
                     return ActivityRecord.query();

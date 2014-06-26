@@ -1,10 +1,10 @@
 describe('ambitions module', function () {
     'use strict';
 
-    beforeEach(module('amb.ambitions'));
+    beforeEach(module('amb.ambition'));
     beforeEach(inject());
-    
-    it('can init ambitions module', function () {
+
+    it('loads ambition module', function () {
 
     });
 });

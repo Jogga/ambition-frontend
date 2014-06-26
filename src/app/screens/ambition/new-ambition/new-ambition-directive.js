@@ -1,7 +1,7 @@
 (function (exports) {
     'use strict';
 
-    exports.angular.module('amb.ambitions.newAmbitionDirective', [
+    exports.angular.module('amb.ambition.newAmbitionDirective', [
         'amb.model.Ambition'
     ]).directive('newAmbition', newAmbitionDirective);
 
@@ -9,7 +9,7 @@
         return {
             restrict: 'A',
             repalce: true,
-            templateUrl: 'screens/ambitions/new-ambition/new-ambition.tpl.html',
+            templateUrl: 'screens/ambition/new-ambition/new-ambition.tpl.html',
             link: linkFn
         };
 
