@@ -8,11 +8,21 @@
 
 <div ng-repeat="ambition in ambitions" class="amb-ambition">
 
-    <p class="amb-ambition-name">to <span inline-edit="ambition.name" on-save="updateAmbition(ambition, updates, 'name')"></span></p>    
 
-    <div ng-repeat="activity in ambition.activities">
-        <h2 class="amb-ambition-activity">{{activity.exercise}}</h2>
-    </div>
+    <h2 class="amb-ambition-activity">{{ambition.exercise}}</h2>
 
-    <!-- <button ng-click="deleteAmbition(ambition)" class="amb-button amb-button-negative">Delete</button> -->
+    <p class="amb-ambition-name">to
+        <span inline-edit="ambition.goal" on-save="updateAmbition(ambition, updates, 'name')"></span></p>
+
+    <ul>
+        <li><input type="checkbox" name="mo" ng-model="ambition.interval.mo" /><label for="mo">Monday</label></li>
+        <li><input type="checkbox" name="tu" ng-model="ambition.interval.tu" /><label for="tu">Monday</label></li>
+        <li><input type="checkbox" name="we" ng-model="ambition.interval.we" /><label for="we">Monday</label></li>
+        <li><input type="checkbox" name="th" ng-model="ambition.interval.th" /><label for="th">Monday</label></li>
+        <li><input type="checkbox" name="fr" ng-model="ambition.interval.fr" /><label for="fr">Monday</label></li>
+        <li><input type="checkbox" name="sa" ng-model="ambition.interval.sa" /><label for="sa">Monday</label></li>
+        <li><input type="checkbox" name="su" ng-model="ambition.interval.su" /><label for="su">Monday</label></li>
+    </ul>
+
+    <button ng-click="deleteAmbition(ambition, $index)" class="amb-button amb-button-negative">Delete</button>
 </div>

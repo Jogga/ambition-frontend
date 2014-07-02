@@ -14,7 +14,9 @@
             AuthService.logout();
             $location.path('/logout');
         };
-        $scope.currentUser = sharedData.currentUser;
+        sharedData.currentUser.$promise.then(function (user) {
+            $scope.currentUser = user;
+        });
 
     }
 }(this));

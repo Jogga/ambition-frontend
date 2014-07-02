@@ -3,11 +3,11 @@
 
     exports.angular.module('amb.record.RecordController', [
         'amb.sharedData',
-        'amb.model.ActivityRecord',
+        'amb.model.Record',
         'amb.record.recordListDirective'
     ]).controller('RecordController', RecordController);
 
-    function RecordController($scope, sharedData, ActivityRecord, recordList) {
+    function RecordController($scope, sharedData, Record, recordList) {        
         $scope.records = recordList;
         $scope.ambitions = sharedData.ambitionList;
         $scope.removeRecord = function (record) {

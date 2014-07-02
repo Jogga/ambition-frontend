@@ -1,32 +1,23 @@
 <form class="amb-new" action="">
     <fieldset>
         <label>What is your ambition?</label>
-        <input ng-model="newAmbition.name" type="text" placeholder="get fitter">
+        <input ng-model="newAmbition.goal" type="text" placeholder="get fitter">
     </fieldset>
     <fieldset>
         <label for="">To achieve this, what do you need to do? </label>
-        <input ng-model="newAmbition.activity.exercise" type="text" placeholder="train in the gym">
+        <input ng-model="newAmbition.exercise" type="text" placeholder="train in the gym">
     </fieldset>
     <fieldset>
         <label for="" class="amb-label-interval">How often do you want to do this activity?</label>
-        <select class="amb-inp-interval" ng-model="newAmbition.activity.interval" name="" id="">
-            <option value="1">once</option>
-            <option value="2">twice</option>
-            <option value="3">three times</option>
-            <option value="4">four times</option>
-            <option value="5">five times</option>
-            <option value="6">six times</option>
-            <option value="7">seven times</option>
-            <option value="8">eight times</option>
-            <option value="9">nine times</option>
-            <option value="10">ten times</option>
-        </select>
-        <select class="amb-inp-period" ng-model="newAmbition.activity.period" name="" id="">
-            <option value="day">a day</option>
-            <option value="week">a week</option>
-            <option value="month">a month</option>
-            <option value="year">a year</option>
-        </select>
+        <ul>
+            <li><input type="checkbox" name="mo" ng-model="newAmbition.interval.mo" /><label for="mo">Monday</label></li>
+            <li><input type="checkbox" name="tu" ng-model="newAmbition.interval.tu" /><label for="tu">Monday</label></li>
+            <li><input type="checkbox" name="we" ng-model="newAmbition.interval.we" /><label for="we">Monday</label></li>
+            <li><input type="checkbox" name="th" ng-model="newAmbition.interval.th" /><label for="th">Monday</label></li>
+            <li><input type="checkbox" name="fr" ng-model="newAmbition.interval.fr" /><label for="fr">Monday</label></li>
+            <li><input type="checkbox" name="sa" ng-model="newAmbition.interval.sa" /><label for="sa">Monday</label></li>
+            <li><input type="checkbox" name="su" ng-model="newAmbition.interval.su" /><label for="su">Monday</label></li>
+        </ul>
     </fieldset>
 <!--<fieldset>
         <label for="">My first reachable goal is to</label>

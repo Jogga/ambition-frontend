@@ -4,7 +4,7 @@
     exports.angular.module('amb.record', [
         'ngRoute',
         'amb.sharedData',
-        'amb.model.ActivityRecord',
+        'amb.model.Record',
         'amb.record.RecordController'
     ])
     .config(function ($routeProvider, sharedDataProvider) {
@@ -12,8 +12,8 @@
             templateUrl: 'screens/record/record.tpl.html',
             controller: 'RecordController',
             resolve: sharedDataProvider.extend ({
-                recordList: function (ActivityRecord) {
-                    return ActivityRecord.query();
+                recordList: function (Record) {
+                    return Record.query();
                 }
             })
         });

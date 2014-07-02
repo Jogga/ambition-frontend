@@ -4,10 +4,10 @@
     exports.angular.module('amb.ambition.AmbitionController', [
         'amb.sharedData',
         'amb.model.Ambition',
-        'amb.model.ActivityRecord'
+        'amb.model.Record'
     ]).controller('AmbitionController', AmbitionController);
 
-    function AmbitionController($scope, sharedData, Ambition, ActivityRecord) {
+    function AmbitionController($scope, sharedData, Ambition, Record) {
 
         $scope.ambitions = sharedData.ambitionList;
 
@@ -18,14 +18,9 @@
             ambition.$update();
         };
 
-        $scope.deleteAmbition = function (ambition) {
+        $scope.deleteAmbition = function (ambition, index) {
             ambition.$remove().then(function (success) {
-                for (var i = 0, max = $scope.ambitions.length; i < max; i++) {
-                    if ($scope.ambitions[i].id === ambition.id) {
-                        $scope.ambitions.splice(i, 1);
-                        break;
-                    }
-                }
+                $scope.ambitions.splice(index, 1);
             });
         };
     }
