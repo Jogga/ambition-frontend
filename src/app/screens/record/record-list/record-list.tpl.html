@@ -2,7 +2,7 @@
     <ul>
         <li ng-repeat="record in records | orderBy:'createdAt':true">
             {{record.createdAt | moment}} - {{record.ambition.exercise}} to {{record.ambition.goal}}
-            <!-- <button class="amb-button" ng-click="removeRecord(record)">x</button> -->
+            <!-- <button class="amb-button" ng-click="removeRecord(record, $index)">x</button> -->
         </li>
     </ul>
 </div>

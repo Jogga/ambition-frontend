@@ -12,14 +12,9 @@
         $scope.records = recordList;
         $scope.ambitions = sharedData.ambitionList;
 
-        $scope.removeRecord = function (record) {
+        $scope.removeRecord = function (record, index) {
             record.$remove().then(function (res) {
-                for (var i = 0; i < $scope.records.length; i++) {
-                    if ($scope.records[i].id === record.id) {
-                        $scope.records.splice(i, 1);
-                        break;
-                    }
-                }
+                $scope.records.splice(index, 1);                
             });
         };
 
