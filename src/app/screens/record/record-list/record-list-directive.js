@@ -15,16 +15,7 @@
         };
 
 
-        function linkFn(scope, el, attrs) {
-
-            scope.getAmbition = function (id) {
-                if (!scope.ambitions) {return {};}
-                for (var i = 0; i < scope.ambitions.length; i++) {
-                    if (scope.ambitions[i].id === id) {
-                        return scope.ambitions[i];
-                    }
-                }
-            };
+        function linkFn(scope, el, attrs) {        
         }
     }
 

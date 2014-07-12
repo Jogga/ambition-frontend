@@ -12,8 +12,8 @@
             templateUrl: 'screens/record/record.tpl.html',
             controller: 'RecordController',
             resolve: sharedDataProvider.extend ({
-                recordList: function (Record) {
-                    return Record.query();
+                recordList: function (Record, sharedData) {
+                    return Record.query().$promise;
                 }
             })
         });

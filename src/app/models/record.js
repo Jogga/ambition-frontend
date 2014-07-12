@@ -7,7 +7,7 @@
     ])
     .factory('Record', function ($resource, routes) {
 
-        var URL = routes.recordsUrl;
+        var URL = routes.recordsUrl + '/:id';
         var AMBITION_RECORD_URL = routes.ambitionsUrl + '/:ambitionId' + routes.recordsPath + '/:id';
 
         var Record = $resource(URL, {
