@@ -14,7 +14,16 @@
     <p class="amb-ambition-name">to
         <span inline-edit="ambition.goal" on-save="updateAmbition(ambition, updates, 'name')"></span></p>
 
-    <ul>
+    <div>
+        <span class="amb-ambition-interval"ng-class="{'checked': ambition.interval.mo}">Mo</span>
+        <span class="amb-ambition-interval"ng-class="{'checked': ambition.interval.tu}">Tu</span>
+        <span class="amb-ambition-interval"ng-class="{'checked': ambition.interval.we}">We</span>
+        <span class="amb-ambition-interval"ng-class="{'checked': ambition.interval.th}">Th</span>
+        <span class="amb-ambition-interval"ng-class="{'checked': ambition.interval.fr}">Fr</span>
+        <span class="amb-ambition-interval"ng-class="{'checked': ambition.interval.sa}">Sa</span>
+        <span class="amb-ambition-interval"ng-class="{'checked': ambition.interval.su}">Su</span>
+    </div>
+    <!-- <ul>
         <li><input type="checkbox" name="mo" ng-model="ambition.interval.mo" /><label for="mo">Monday</label></li>
         <li><input type="checkbox" name="tu" ng-model="ambition.interval.tu" /><label for="tu">Monday</label></li>
         <li><input type="checkbox" name="we" ng-model="ambition.interval.we" /><label for="we">Monday</label></li>
@@ -22,7 +31,23 @@
         <li><input type="checkbox" name="fr" ng-model="ambition.interval.fr" /><label for="fr">Monday</label></li>
         <li><input type="checkbox" name="sa" ng-model="ambition.interval.sa" /><label for="sa">Monday</label></li>
         <li><input type="checkbox" name="su" ng-model="ambition.interval.su" /><label for="su">Monday</label></li>
-    </ul>
+    </ul> -->
 
-    <button ng-click="deleteAmbition(ambition, $index)" class="amb-button amb-button-negative">Delete</button>
+    <!-- <button ng-click="deleteAmbition(ambition, $index)" class="amb-button amb-button-negative">Delete</button> -->
 </div>
+
+
+<style>
+
+.amb-ambition-interval {
+    display: inline-block;
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+    background-color: #eee;
+}
+
+.amb-ambition-interval, .checked {
+    background-color: #0DFFD4;
+}
+</style>
