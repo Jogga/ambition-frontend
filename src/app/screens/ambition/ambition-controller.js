@@ -23,6 +23,12 @@
                 $scope.ambitions.splice(index, 1);
             });
         };
+
+        $scope.checkAmbition = function (ambition) {
+            Record.create({ success: true, ambitionId: ambition.id }).$promise.then(function (record) {
+                ambition.lastRecord = record;
+            });
+        }
     }
 
 }(this));

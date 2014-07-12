@@ -15,7 +15,11 @@
 
         function linkFn(scope, el, attrs) {
 
-            scope.newAmbition = {name: '', activity: {period: 'day', interval: 1}};
+            scope.newAmbition = {
+                goal: '',
+                exercise: '',
+                interval: {mo: true, tu: true, we: true, th: true, fr: true, sa: true, su: true}
+            };
 
 
             scope.createAmbition = function () {
@@ -26,7 +30,12 @@
                 var ambition = Ambition.save(newAmbition);
                 ambition.$promise.then(function (ambition) {
                     scope.ambitions.push(ambition);
-                    scope.newAmbition = {name: '', activity: {period: 'day', interval: 1}};
+                    scope.showNew = false;
+                    scope.newAmbition = {
+                        goal: '',
+                        exercise: '',
+                        interval: {mo: true, tu: true, we: true, th: true, fr: true, sa: true, su: true}
+                    };
                 });
             };
         }
