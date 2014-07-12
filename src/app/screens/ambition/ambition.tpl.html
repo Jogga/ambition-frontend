@@ -12,7 +12,9 @@
     <h2 class="amb-ambition-activity">{{ambition.exercise}}</h2>
 
     <p class="amb-ambition-name">to
-        <span inline-edit="ambition.goal" on-save="updateAmbition(ambition, updates, 'name')"></span></p>
+        <span inline-edit="ambition.goal" on-save="updateAmbition(ambition, updates, 'name')"></span>
+    </p>
+
 
     <div>
         <span class="amb-ambition-interval" ng-class="{'checked': ambition.interval.mo}">Mo</span>
@@ -23,15 +25,8 @@
         <span class="amb-ambition-interval" ng-class="{'checked': ambition.interval.sa}">Sa</span>
         <span class="amb-ambition-interval" ng-class="{'checked': ambition.interval.su}">Su</span>
     </div>
-    <!-- <ul>
-        <li><input type="checkbox" name="mo" ng-model="ambition.interval.mo" /><label for="mo">Monday</label></li>
-        <li><input type="checkbox" name="tu" ng-model="ambition.interval.tu" /><label for="tu">Monday</label></li>
-        <li><input type="checkbox" name="we" ng-model="ambition.interval.we" /><label for="we">Monday</label></li>
-        <li><input type="checkbox" name="th" ng-model="ambition.interval.th" /><label for="th">Monday</label></li>
-        <li><input type="checkbox" name="fr" ng-model="ambition.interval.fr" /><label for="fr">Monday</label></li>
-        <li><input type="checkbox" name="sa" ng-model="ambition.interval.sa" /><label for="sa">Monday</label></li>
-        <li><input type="checkbox" name="su" ng-model="ambition.interval.su" /><label for="su">Monday</label></li>
-    </ul> -->
+
+    <p>Streak: {{ambition.streak}}</p>
 
     <button ng-click="checkAmbition(ambition)">Also done today</button>
 
