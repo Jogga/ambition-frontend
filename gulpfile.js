@@ -12,11 +12,18 @@ var minifyHtml = require("gulp-minify-html");
 
 
 
-var libraries = [
+var jsLibraries = [
     'bower_components/momentjs/moment.js',
     'bower_components/angular/angular.js',
     'bower_components/angular-resource/angular-resource.js',
     'bower_components/angular-route/angular-route.js'
+];
+
+var otherLibraries = [
+    'bower_components/fontawesome/css/font-awesome.min.css'
+];
+var fonts = [
+    'bower_components/fontawesome/fonts/*.*'
 ];
 
 var scripts = ['src/**/*.js', '!src/**/*.spec.js'];
@@ -74,9 +81,21 @@ gulp.task('templates', function () {
 
 
 gulp.task('libs', function () {
-    return gulp.src(libraries)
+    return gulp.src(jsLibraries)
         .pipe(concat('libs.js'))
         .pipe(gulp.dest('_build/'));
+});
+
+
+gulp.task('fontawesome', ['fonts'], function () {
+    gulp.src(otherLibraries)
+    .pipe(gulp.dest('_build/fontawesome'));
+});
+
+
+gulp.task('fonts', function () {
+    gulp.src(fonts)
+    .pipe(gulp.dest('_build/fonts'));
 });
 
 
@@ -120,7 +139,7 @@ gulp.task('watch', ['default'], function () {
 
 
 gulp.task('default', function() {
-    gulp.start('libs', 'compass', 'scripts', 'test');
+    gulp.start('libs', 'compass', 'scripts', 'test', 'fontawesome');
 });
 
 function handleError(err) {
