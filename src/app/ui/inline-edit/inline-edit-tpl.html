@@ -1,11 +1,22 @@
 <input ng-show="editModeActive" type="text" on-enter="save()" on-esc="cancel()" ng-model="model" >
 
 <div ng-if="editModeActive">
-    <button ng-click="cancel()">cancel</button>
-    <button ng-click="save()">save</i></button>
+    <button ng-click="cancel()" class="amb-button"><i class="fa fa-times"></i></button>
+    <button ng-click="save()" class="amb-button amb-button-positive"><i class="fa fa-check"></i></button>
 </div>
 
 <span ng-mouseenter="showEdit = true" ng-mouseleave="showEdit = false">
     <span ng-hide="editModeActive" ng-click="edit()">{{model}}</span>
-    <button ng-show="showEdit" ng-click="edit()">edit</i></button>
+    <span ng-show="showEdit" ng-click="edit()" class="amb-edit-sign"><i class="fa fa-pencil"></i></span>
 </span>
+
+
+<!--  @TODO: move to sass file -->
+<style>
+.amb-edit-sign {
+    position: absolute;
+    margin-left: 10px;
+    z-index: 10;
+}
+
+</style>

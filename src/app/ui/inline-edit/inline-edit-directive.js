@@ -10,7 +10,7 @@
         return {
             restrict: 'A',
             scope: {
-                model: '=inlineEdit',                
+                model: '=inlineEdit',
                 doSave: '&onSave',
                 doCancel: '&onCancel'
             },
@@ -31,7 +31,7 @@
             scope.save = function () {
                 if (!scope.model && scope.model === '') { scope.cancel(); }
                 previousValue = scope.model;
-                scope.doSave({updates: scope.model});
+                scope.doSave({updatedValue: scope.model});
                 scope.editModeActive = false;
             };
 
