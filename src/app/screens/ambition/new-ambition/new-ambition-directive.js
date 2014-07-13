@@ -14,7 +14,6 @@
         };
 
         function linkFn(scope, el, attrs) {
-
             scope.newAmbition = {
                 goal: '',
                 exercise: '',
@@ -23,12 +22,7 @@
 
 
             scope.createAmbition = function () {
-                var newAmbition = scope.newAmbition;
-                newAmbition.activities = [newAmbition.activity];
-                delete newAmbition.activity;
-
-                var ambition = Ambition.save(newAmbition);
-                ambition.$promise.then(function (ambition) {
+                Ambition.save(scope.newAmbition).$promise.then(function (ambition) {
                     scope.ambitions.push(ambition);
                     scope.showNew = false;
                     scope.newAmbition = {
