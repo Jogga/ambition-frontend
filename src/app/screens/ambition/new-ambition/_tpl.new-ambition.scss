@@ -72,25 +72,6 @@
         background-color: $amb-clr-grey-xlgt;
     }
 
-    .amb-button-positive {
-        background: {
-            color: $amb-clr-green;
-        }
-        color: $amb-clr-white;
-        border: {
-            color: $amb-clr-green;
-        }
-        &:hover,
-        &:focus {
-            background: {
-                color: #06A766;
-            }
-            border: {
-                color: #06A766;
-            }
-        }
-    }
-
     .amb-label-interval {
         margin: {
             bottom: 10px;
