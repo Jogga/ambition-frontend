@@ -9,42 +9,58 @@
 <div ng-repeat="ambition in ambitions" class="amb-ambition">
 
 
-    <h2 class="amb-ambition-activity">{{ambition.exercise}}</h2>
+    <h2 class="amb-ambition-activity" inline-edit="ambition.exercise" on-save="updateAmbition(ambition, updatedValue, 'exercise')"></h2>
 
     <p class="amb-ambition-name">to
-        <span inline-edit="ambition.goal" on-save="updateAmbition(ambition, updates, 'name')"></span>
+        <span inline-edit="ambition.goal" on-save="updateAmbition(ambition, updatedValue, 'goal')"></span>
     </p>
 
 
     <div>
-        <span class="amb-ambition-interval" ng-class="{'checked': ambition.interval.mo}">Mo</span>
-        <span class="amb-ambition-interval" ng-class="{'checked': ambition.interval.tu}">Tu</span>
-        <span class="amb-ambition-interval" ng-class="{'checked': ambition.interval.we}">We</span>
-        <span class="amb-ambition-interval" ng-class="{'checked': ambition.interval.th}">Th</span>
-        <span class="amb-ambition-interval" ng-class="{'checked': ambition.interval.fr}">Fr</span>
-        <span class="amb-ambition-interval" ng-class="{'checked': ambition.interval.sa}">Sa</span>
-        <span class="amb-ambition-interval" ng-class="{'checked': ambition.interval.su}">Su</span>
+        <span class="amb-button interval"
+              ng-class="{'checked': ambition.interval.mo}"
+              ng-click="toggleActiveDay(ambition, 'mo')">Mo</span>
+        <span class="amb-button interval"
+              ng-class="{'checked': ambition.interval.tu}"
+              ng-click="toggleActiveDay(ambition, 'tu')">Tu</span>
+        <span class="amb-button interval"
+              ng-class="{'checked': ambition.interval.we}"
+              ng-click="toggleActiveDay(ambition, 'we')">We</span>
+        <span class="amb-button interval"
+              ng-class="{'checked': ambition.interval.th}"
+              ng-click="toggleActiveDay(ambition, 'th')">Th</span>
+        <span class="amb-button interval"
+              ng-class="{'checked': ambition.interval.fr}"
+              ng-click="toggleActiveDay(ambition, 'fr')">Fr</span>
+        <span class="amb-button interval"
+              ng-class="{'checked': ambition.interval.sa}"
+              ng-click="toggleActiveDay(ambition, 'sa')">Sa</span>
+        <span class="amb-button interval"
+              ng-class="{'checked': ambition.interval.su}"
+              ng-click="toggleActiveDay(ambition, 'su')">Su</span>
     </div>
 
     <p>Streak: {{ambition.streak}}</p>
 
-    <button ng-click="checkAmbition(ambition)">Also done today</button>
+    <button ng-click="checkAmbition(ambition)" class="amb-button">Also done today</button>
 
-    <!-- <button ng-click="deleteAmbition(ambition, $index)" class="amb-button amb-button-negative">Delete</button> -->
+    <button ng-click="deleteAmbition(ambition, $index)" class="amb-button amb-button-negative">Delete</button>
 </div>
 
-
+<!--  @TODO: move to sass file -->
 <style>
+.interval {
+    padding: 5px 10px;
 
-.amb-ambition-interval {
-    display: inline-block;
-    border: 1px solid;
-    width: 30px;
+    /*width: 30px;
     height: 30px;
-    background-color: #eee;
+    border: 1px solid black;*/
+    /*background-color: #eee;*/
 }
 
-.amb-ambition-interval.checked {
-    background-color: #0DFFD4;
+.amb-button.checked {
+    color: white;
+    border: none;
+    background-color: rgb(52, 255, 133);
 }
 </style>

@@ -11,11 +11,16 @@
 
         $scope.ambitions = sharedData.ambitionList;
 
-        $scope.updateAmbition = function (ambition, updates, property) {
-            if (property && updates) {
-                ambition[property] = updates;
+        $scope.updateAmbition = function (ambition, updatedValue, property) {
+            if (property && updatedValue) {
+                ambition[property] = updatedValue;
             }
             ambition.$update();
+        };
+
+        $scope.toggleActiveDay = function (ambition, day) {
+            ambition.interval[day] = !ambition.interval[day];
+            $scope.updateAmbition(ambition);
         };
 
         $scope.deleteAmbition = function (ambition, index) {
@@ -27,6 +32,7 @@
         $scope.checkAmbition = function (ambition) {
             Record.create({ success: true, ambitionId: ambition.id }).$promise.then(function (record) {
                 ambition.lastRecord = record;
+                ambition.streak = ambition.streak + 1;
             });
         }
     }

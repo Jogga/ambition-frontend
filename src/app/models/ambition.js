@@ -3,9 +3,10 @@
 
     sandbox.angular.module('amb.model.Ambition', [
         'ngResource',
-        'amb.routes'
+        'amb.routes',
+        'amb.util'
     ])
-    .factory('Ambition', function ($resource, routes) {
+    .factory('Ambition', function ($resource, routes, Util) {
 
         var URL = routes.ambitionsUrl + '/:id';
 
@@ -14,12 +15,23 @@
         }, {
             update: {
                 method: 'PUT',
-                url: URL
+                url: URL,
+                transformRequest: function (ambitionData, headersGetter) {
+                    if (ambitionData.lastRecord && ambitionData.lastRecord._id) {
+                        ambitionData.lastRecord = ambitionData.lastRecord._id
+                    }
+                    // need to delete angular properties manually (since using custom request transformer)
+                    Util.cleanupAngularObject(ambitionData);
+                    var result = JSON.stringify(ambitionData);
+                    return result;
+                }
             }
         });
 
         return Ambition;
 
     });
+
+
 
 }(this));
