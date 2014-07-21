@@ -10,7 +10,7 @@
 
         $scope.login = function (user) {
             AuthService.login(user.email, user.password).then(function () {
-                $location.path('/activities');
+                $location.path('/activity');
             });
         };
 

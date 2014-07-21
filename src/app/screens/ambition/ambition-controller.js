@@ -15,7 +15,9 @@
             if (property && updatedValue) {
                 ambition[property] = updatedValue;
             }
-            ambition.$update();
+            if (ambition.$update) {
+                ambition.$update();
+            }
         };
 
         $scope.toggleActiveDay = function (ambition, day) {
@@ -34,7 +36,7 @@
                 ambition.lastRecord = record;
                 ambition.streak = ambition.streak + 1;
             });
-        }
+        };
     }
 
 }(this));

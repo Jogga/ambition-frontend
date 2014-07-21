@@ -1,54 +1,69 @@
 <header class="amb-menu" ng-if="isLoggedIn()">
-    <nav class="amb-nav-main">
+    <nav>
 
-        <a href="#/activity" class ="amb-nav-elem" ng-class="{'amb-active':isActive('/activity')}">
+        <a href="#/ambitions/new" class="amb-nav-elem" ng-class="{'amb-active':isActive('/ambitions/new')}">
             <span class="amb-nav-icon">
                 <?xml version="1.0" encoding="utf-8"?>
-                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
-                    <polygon class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-                    19.5,17.6 4.1,37.4 18.4,30.8 26.1,38.5 45.9,11.9 26.1,24.2 "/>
+                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                	 viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                    <line class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="12.5" y1="24.8" x2="37.5" y2="24.8"/>
+                    <line class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" x1="25" y1="12.2" x2="25" y2="37.3"/>
                 </svg>
             </span>
-            <span class="amb-nav-label">Activity</span>
         </a>
 
-        <a href="#/ambitions" class="amb-nav-elem" ng-class="{'amb-active':isActive('/ambitions')}">
-            <span class="amb-nav-icon">
-                <?xml version="1.0" encoding="utf-8"?>
-                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
-                    <polygon class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-                	11,30.7 31.1,7 40.3,43.4 24.6,24.4 "/>
-                </svg>
-            </span>
-            <span class="amb-nav-label">Ambition</span>
-        </a>
+        <div class="amb-nav-main">
+            <div class="amb-nav-elem-group">
+                <a href="#/records" class="amb-nav-elem" ng-class="{'amb-active':isActive('/records')}">
+                    <span class="amb-nav-icon">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                            <polygon class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+                            5.1,36 19.7,20.5 23.7,25.6 39,9.4 39,36 "/>
+                        </svg>
+                    </span>
+                    <span class="amb-nav-label">Records</span>
+                </a>
 
-        <a href="#/records" class="amb-nav-elem" ng-class="{'amb-active':isActive('/records')}">
-            <span class="amb-nav-icon">
-                <?xml version="1.0" encoding="utf-8"?>
-                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
-                    <polygon class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
-                	5.1,36 19.7,20.5 23.7,25.6 39,9.4 39,36 "/>
-                </svg>
-            </span>
-            <span class="amb-nav-label">Record</span>
-        </a>
+                <a href="#/activity" class ="amb-nav-elem" ng-class="{'amb-active':isActive('/activity')}">
+                    <span class="amb-nav-icon">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                            <polygon class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+                            19.5,17.6 4.1,37.4 18.4,30.8 26.1,38.5 45.9,11.9 26.1,24.2 "/>
+                        </svg>
+                    </span>
+                    <span class="amb-nav-label">Activities</span>
+                </a>
 
-        <a href="#/profile" class="amb-nav-elem amb-nav-profile" ng-class="{'amb-active':isActive('/profile')}">
+                <a href="#/ambitions" class="amb-nav-elem" ng-class="{'amb-active':isActive('/ambitions')}">
+                    <span class="amb-nav-icon">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                            <polygon class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+                        	11,30.7 31.1,7 40.3,43.4 24.6,24.4 "/>
+                        </svg>
+                    </span>
+                    <span class="amb-nav-label">Ambitions</span>
+                </a>
+            </div>
+        </div>
+
+        <a href="#/profile" class="amb-nav-elem" ng-class="{'amb-active':isActive('/profile')}">
             <img src="assets/img/avatar-aaa.jpg" alt="">
         </a>
 
-        <a href="#/settings" class="amb-nav-elem amb-nav-settings" ng-class="{'amb-active':isActive('/settings')}">
-            <span class="amb-nav-icon">
-                <?xml version="1.0" encoding="utf-8"?>
-                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
-                <path class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M39,27v-4h-4.1
-                	c-0.3-1.3-0.8-2.5-1.5-3.6l2.9-2.9l-2.8-2.8l-2.9,2.9c-1.1-0.7-2.3-1.2-3.6-1.5V11h-4v4.1c-1.3,0.3-2.5,0.8-3.6,1.5l-2.9-2.9
-                	l-2.8,2.8l2.9,2.9c-0.7,1.1-1.2,2.3-1.5,3.6H11v4h4.1c0.3,1.3,0.8,2.5,1.5,3.6l-2.9,2.9l2.8,2.8l2.9-2.9c1.1,0.7,2.3,1.2,3.6,1.5V39
-                	h4v-4.1c1.3-0.3,2.5-0.8,3.6-1.5l2.9,2.9l2.8-2.8l-2.9-2.9c0.7-1.1,1.2-2.3,1.5-3.6H39z"/>
-                </svg>
-            </span>
-            <span class="amb-nav-label">Settings</span>
-        </a>
+<!--         <a href="#/settings" class="amb-nav-elem amb-nav-settings" ng-class="{'amb-active':isActive('/settings')}">
+    <span class="amb-nav-icon">
+        <?xml version="1.0" encoding="utf-8"?>
+        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+        <path class="amb-icon-path" fill="none" stroke="#000000" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" d="M39,27v-4h-4.1
+        	c-0.3-1.3-0.8-2.5-1.5-3.6l2.9-2.9l-2.8-2.8l-2.9,2.9c-1.1-0.7-2.3-1.2-3.6-1.5V11h-4v4.1c-1.3,0.3-2.5,0.8-3.6,1.5l-2.9-2.9
+        	l-2.8,2.8l2.9,2.9c-0.7,1.1-1.2,2.3-1.5,3.6H11v4h4.1c0.3,1.3,0.8,2.5,1.5,3.6l-2.9,2.9l2.8,2.8l2.9-2.9c1.1,0.7,2.3,1.2,3.6,1.5V39
+        	h4v-4.1c1.3-0.3,2.5-0.8,3.6-1.5l2.9,2.9l2.8-2.8l-2.9-2.9c0.7-1.1,1.2-2.3,1.5-3.6H39z"/>
+        </svg>
+    </span>
+    <span class="amb-nav-label">Settings</span>
+</a> -->
     </nav>
 </header>

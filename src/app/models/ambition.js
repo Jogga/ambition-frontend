@@ -17,9 +17,7 @@
                 method: 'PUT',
                 url: URL,
                 transformRequest: function (ambitionData, headersGetter) {
-                    if (ambitionData.lastRecord && ambitionData.lastRecord._id) {
-                        ambitionData.lastRecord = ambitionData.lastRecord._id
-                    }
+                    delete ambitionData.lastRecord;
                     // need to delete angular properties manually (since using custom request transformer)
                     Util.cleanupAngularObject(ambitionData);
                     var result = JSON.stringify(ambitionData);

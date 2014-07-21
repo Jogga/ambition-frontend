@@ -16,6 +16,9 @@
         $routeProvider.when('/logout', {
             templateUrl: 'screens/logout-tpl.html'
         });
+        $routeProvider.otherwise({
+            redirectTo: '/login'
+        });
     })
     .run(function ($rootScope, $location, AuthService) {
         $rootScope.$on('$routeChangeStart', function (event, toState, toParams, fromState, fromParams) {
