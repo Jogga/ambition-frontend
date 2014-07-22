@@ -6,7 +6,7 @@
 
 /* Ambition Container */
 .amb-ambition {
-    position: relative;
+    // box
     max-width: 400px;
     padding: 20px;
     margin: {
@@ -14,28 +14,81 @@
         right: auto;
         bottom: 50px;
     }
-    background-color: rgb(238, 238, 238);
+    border: {
+        width: 0px;
+        color: $amb-clr-grey-xlgt;
+        style: solid;
+    }
+
+    // pos
+    position: relative;
+
+    // skin
     text-align: center;
     color: $amb-clr-black;
+
+    // child
+    .amb-button-interval {
+        $amb-button-interval-size: 25px;
+        @extend .amb-button;
+
+        // box
+        @include box-sizing(content-box);
+        width: $amb-button-interval-size;
+        height: $amb-button-interval-size;
+        padding: 4px 4px;
+        margin: 1px;
+        border: 2px solid $amb-clr-grey-lgt;
+
+        // typo
+        text-align: center;
+        line-height: $amb-button-interval-size;
+
+        // skin
+        color: $amb-clr-grey-lgt;
+        //background-color: $amb-clr-grey-xlgt;
+
+    }
+
+    .amb-button-interval.checked {
+        color: $amb-clr-white;
+        background-color: $amb-clr-blue;
+        border-color: $amb-clr-blue;
+    }
+
+    .amb-interval-settings {
+        padding: 5px;
+        margin: {
+            top: 20px;
+            bottom: 20px;
+        };
+        //background-color: $amb-clr-grey-xlgt;
+    }
 }
 
 
 /* Ambition name */
 .amb-ambition-name {
-    margin: 0;
+    margin: {
+        top: 0.25em;
+        bottom: 0em;
+    };
 
     font: {
-        size: 20px;
-        family: $amb-fnt-serif;
+        size: 18px;
+        family: $amb-fnt-sans;
         style: normal;
-        weight: 400;
+        weight: 300;
     }
 }
 
 
 /* Acitvity Text */
 .amb-ambition-activity {
-    margin: 0;
+    margin: {
+        top: 0em;
+        bottom: 0.25em;
+    };
 
     font: {
         size: 36px;

@@ -25,6 +25,7 @@
 
     &:hover,
     &:focus {
+        cursor: pointer;
         outline: none;
         border-color: $amb-clr-black;
         color: $amb-clr-black;

@@ -20,6 +20,7 @@ $amb-nav-height: 50px;
     // box
     overflow: hidden;
     width: 100%;
+    min-width: 250px;
     height: $amb-nav-height;
     padding: 0;
     margin: 0;
@@ -63,26 +64,6 @@ $amb-nav-height: 50px;
     text: {
         align: center;
     }
-
-    // child
-    /*
-     * Group of main Nav elements
-     */
-    .amb-nav-elem-group {
-        // box
-        max-width: 150px;
-        margin: {
-            left: auto;
-            right: auto;
-        }
-    }
-    .amb-nav-elem {
-        // box
-        float: left;
-        display: block;
-        width: 50px;
-
-    }
 }
 
 /*
@@ -99,21 +80,71 @@ $amb-nav-height: 50px;
             right: 5%;
         }
 
-        // child
-        .amb-nav-elem-group {
-            max-width: none;
-            margin: {
-                left: auto;
-                right: auto;
-            }
+        .amb-nav-icon {
+            display: none;
         }
-        .amb-nav-elem {
+        .amb-nav-label {
+            display: block
+        }
+    }
+}
+
+
+
+/*
+ * Group of Nav Tabs
+ */
+.amb-nav-tabs {
+    // box
+    max-width: 150px;
+    padding: 0;
+    margin: {
+        top: 0;
+        bottom: 0;
+        left: auto;
+        right: auto;
+    }
+
+    // Child
+    li {
+        // box
+        float: left;
+        display: block;
+        width: 50px;
+
+        // skin
+        list-style-type: none;
+    }
+    .amb-nav-elem {
+        // box
+        width: 100%;
+    }
+}
+
+
+
+/*
+ * Group of Tabs
+ * Responsive Screen Size: Medium
+ */
+@mixin amb-nav-tabs-m () {
+    .amb-nav-tabs {
+        max-width: none;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+
+        // child
+        li{
             display: block;
             float: left;
             width: 33.333%;
             height: auto;
             margin: 0;
+        }
 
+        .amb-nav-elem {
             // skin
             @include background-image(linear-gradient($amb-clr-white 0px, $amb-clr-white 45px, $amb-clr-blue 45px, $amb-clr-blue 50px));
             background: {
@@ -132,14 +163,10 @@ $amb-nav-height: 50px;
                 @include transition-duration($amb-tmng-hover-in);
             }
         }
-        .amb-nav-icon {
-            display: none;
-        }
-        .amb-nav-label {
-            display: block
-        }
     }
 }
+
+
 
 /* Single Nav Elem */
 .amb-nav-elem {
@@ -273,6 +300,7 @@ $amb-nav-height: 50px;
 /* Mixin Collections for responsive Styles */
 @mixin amb-nav-mixins-m () {
     @include amb-nav-elem-m();
+    @include amb-nav-tabs-m();
     @include amb-nav-main-m();
 }
 
