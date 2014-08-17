@@ -11,9 +11,11 @@
 .amb-activity {
 
     // Box
-    padding: 0;
+    padding: 20px;
+    overflow: hidden;
 
     // Pos
+    clear: left;
     position: relative;
     text-align: left;
 
@@ -27,7 +29,15 @@
     // Children
     // Button Interaction Div
     .amb-activity-interaction {
+        width: 60px;
         float: left;
+        overflow: hidden;
+    }
+
+    .amb-activity-desc {
+        margin: {
+            left: 60px;
+        }
     }
 
     // Name of Ambition to which this activity belongs
@@ -45,25 +55,45 @@
         }
     }
 
+
+    // Exercise Name
+    .amb-activity-name {
+        // box
+        margin: 0;
+        display: inline;
+
+        // typo
+        font: {
+            family: $amb-fnt-sans;
+            size: 22px;
+            weight: 700;
+        }
+        text: {
+            transform: uppercase;
+        }
+        line-height: 1em;
+    }
+
+
     // Button do set activity as done
     .amb-button {
         // Box
         display: block;
-        padding: 10px;
         border: none;
-        margin: {
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: auto;
-        };
+        padding: 0;
+        margin: 0;
+        border: {
+            width: 2px;
+            color: rgba(0,0,0,0.1);
+            style: solid;
+        }
 
         // Skin
         text-align: center;
-        color: $amb-clr-white;
         background: {
-            color: $amb-clr-turquois;
+            color: rgba(0,0,0,0.0);
         }
+        color: $amb-clr-white;
         line-height: 0;
         @include border-radius(50%);
 
@@ -74,102 +104,32 @@
 
         // Children
         svg {
+            // box
             width: 40px;
             height: 40px;
         }
         .amb-icon-path {
-            stroke: $amb-clr-white;
+            stroke: rgba(0,0,0,0.2);
             stroke-width: 4;
 
         }
 
         // States
         &:hover {
+
+            // Skin
             cursor: pointer;
-            @include transition-duration($amb-tmng-hover-in);
-            @include box-shadow(rgba($amb-clr-black, 0.33) 0px 0px 0px 10px);
+            background: {
+                color: rgba(0,0,0,0.2);
+            }
+            border-color: transparent;
+
+            // child
+            .amb-icon-path {
+                stroke: rgba(255,255,255,1);
+                stroke-width: 4;
+
+            }
         }
     }
-}
-
-
-
-/* Exercise Name */
-.amb-activity-name {
-    margin: 0;
-
-    font: {
-        family: $amb-fnt-sans;
-        size: 32px;
-        weight: 700;
-    }
-    line-height: 1em;
-}
-
-
-
-/* Ambition name, Activity Desc */
-.amb-activity-desc {
-
-    // Box
-    padding: {
-        left: 20px;
-        right: 20px;
-    }
-    width: 100%;
-    @include box-sizing(border-box);
-}
-
-
-
-
-/* Timeline */
-.amb-activity-timeline {
-    width: 300%;
-    height: 0px;
-    border: {
-        color: $amb-clr-turquois;
-        width: 0;
-        top-width: 4px;
-        style: solid;
-    }
-
-    position: absolute;
-    left: -200%;
-    top: 50%;
-    z-index: -1;
-
-    @include transform(translateY(-50%));
-}
-
-.amb-activity-timeline.future {
-    border: {
-        color: $amb-clr-grey-lgt;
-        style: dashed;
-    }
-    position: absolute;
-    left: auto;
-    right: -100%;
-    display: none;
-}
-
-.amb-activity-timeline-arrow {
-    width: 0px;
-    height: 0px;
-    border: {
-        style: solid;
-        top-width: 10px;
-        right-width: 0;
-        bottom-width: 10px;
-        left-width: 15px;
-        top-color: transparent !important;
-        right-color: transparent !important;
-        bottom-color: transparent !important;
-        left-color: $amb-clr-grey-lgt;
-    }
-    position: absolute;
-    left: -10px;
-    top: 50%;
-
-    @include transform(translateY(-50%));
 }
