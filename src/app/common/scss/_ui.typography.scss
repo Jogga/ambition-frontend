@@ -5,14 +5,14 @@
 
 
 /* Font Stacks */
-$amb-fnt-sans: "museo-sans", "Helvetica Neue", Arial, sans-serif;
+$amb-fnt-sans: "effra","ff-enzo-web", "museo-sans", "Helvetica Neue", Arial, sans-serif;
 $amb-fnt-serif: "freight-display-pro", Georgia, serif;
-
+$amb-fnt-script: "ff-market-web";
 
 /* Typo Styling */
 body {
     font: {
         family: $amb-fnt-sans;
-        weight: 300;
+        weight: 400;
     }
 }

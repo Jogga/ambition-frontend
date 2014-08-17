@@ -7,12 +7,11 @@
 /* Ambition Container */
 .amb-ambition {
     // box
-    max-width: 400px;
-    padding: 20px;
+    padding: 20px 20px;
     margin: {
         left: auto;
         right: auto;
-        bottom: 50px;
+        bottom: 0;
     }
     border: {
         width: 0px;
@@ -25,74 +24,189 @@
 
     // skin
     text-align: center;
-    color: $amb-clr-black;
+    color: $amb-clr-white;
+    background: {
+        color: $amb-clr-blue;
+    }
 
     // child
     .amb-button-interval {
-        $amb-button-interval-size: 25px;
+        $amb-button-interval-size: 24px;
         @extend .amb-button;
 
         // box
         @include box-sizing(content-box);
-        width: $amb-button-interval-size;
+        display: block;
+        width: 100%;
         height: $amb-button-interval-size;
-        padding: 4px 4px;
-        margin: 1px;
-        border: 2px solid $amb-clr-grey-lgt;
+        border: {
+            width: 0px;
+            color: $amb-clr-white;
+            style: solid;
+        }
+        padding: 5px 0px;
+        margin: 0;
 
         // typo
-        text-align: center;
+        font: {
+            weight: 700;
+            size: 0.75em;
+        }
+        letter-spacing: 1px;
+        text: {
+            transform: uppercase;
+            align: center;
+        }
         line-height: $amb-button-interval-size;
+        -webkit-font-smoothing: antialiased;
 
         // skin
-        color: $amb-clr-grey-lgt;
-        //background-color: $amb-clr-grey-xlgt;
-
+        color: $amb-clr-white;
+        background: {
+            color: transparent;
+        }
+        @include border-radius(0%);
     }
 
     .amb-button-interval.checked {
-        color: $amb-clr-white;
-        background-color: $amb-clr-blue;
-        border-color: $amb-clr-blue;
+        //color: $amb-clr-turquois;
+        color: $amb-clr-black;
+        background: {
+            color: white;
+        }
+
+        &:hover {
+            color: $amb-clr-black;
+        }
     }
 
     .amb-interval-settings {
-        padding: 5px;
+        // box
+        padding: 0px;
+        border: {
+            width: 0px;
+            color: $amb-clr-white;
+            style: solid;
+        }
         margin: {
-            top: 20px;
-            bottom: 20px;
+            top: 15px;
+            bottom: 15px;
         };
-        //background-color: $amb-clr-grey-xlgt;
+        overflow: hidden;
+
+        // skin
+        background: {
+            color: rgba(0,0,0,0.1);
+        }
+        @include border-radius(4px);
+
+        // child
+        li {
+
+            // box
+            width: 14.2857%;
+            float: left;
+
+            // skin
+            list-style-type: none;
+        }
+    }
+}
+
+/*
+ * Ambition Element
+ * Responsive Screen Size: Medium
+ */
+@mixin amb-ambition-m () {
+    .amb-ambition {
+        //padding: 0;
     }
 }
 
 
+
 /* Ambition name */
 .amb-ambition-name {
+    // box
     margin: {
-        top: 0.25em;
-        bottom: 0em;
+        top: 0em;
+        bottom: 1.2em;
     };
 
+    // typo
     font: {
         size: 18px;
-        family: $amb-fnt-sans;
+        family: $amb-fnt-script;
         style: normal;
-        weight: 300;
+        weight: 400;
     }
+    -webkit-font-smoothing: antialiased;
+
+    // skin
+    color: $amb-clr-grey-xlgt;
 }
 
 
 /* Acitvity Text */
 .amb-ambition-activity {
     margin: {
-        top: 0em;
-        bottom: 0.25em;
+        top: 0.5em;
+        bottom: 0.15em;
     };
 
     font: {
-        size: 36px;
-        weight: 700;
+        size: 30px;
+        weight: 800;
+        style: normal;
     }
-    line-height: 36px;
+    text: {
+        transform: uppercase;
+    }
+    line-height: 1em;
+}
+
+
+
+/*
+ * Ambition Interaction Container
+ */
+.amb-ambition-interaction {
+
+    // box
+    overflow: hidden;
+
+    // child
+    .amb-button {
+        // box
+        float: right;
+        padding: 2px;
+        margin: 5px 10px;
+        border: none;
+        font: {
+            weight: 400;
+            size: 0.75em;
+        }
+
+        // skin
+        color: rgba(0,0,0,0.3);
+
+        // Pseudo
+        &:first-child {
+            float: left;
+        }
+    }
+}
+
+
+
+/* Mixin Collections for responsive Styles */
+@mixin amb-ambition-mixins-m () {
+    @include amb-ambition-m();
+}
+
+
+
+/* Mediaqueries */
+@media screen and (min-width: $amb-break-m) {
+    @include amb-ambition-mixins-m();
 }
