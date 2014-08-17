@@ -6,7 +6,7 @@
     <div ng-show="showNew" new-ambition class="amb-ambition"></div>
 </div>
 
-<div ng-repeat="ambition in ambitions" class="amb-ambition">
+<div ng-repeat="ambition in ambitions" class="amb-ambition" style="background-color:{{ambition.color}}">
 
     <h2 class="amb-ambition-activity" inline-edit="ambition.exercise" on-save="updateAmbition(ambition, updatedValue, 'exercise')"></h2>
     <p class="amb-ambition-name">to
