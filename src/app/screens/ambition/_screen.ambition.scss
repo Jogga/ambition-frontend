@@ -61,18 +61,18 @@
         -webkit-font-smoothing: antialiased;
 
         // skin
-        color: $amb-clr-white;
+        color: rgba(0,0,0,0.2);
         background: {
-            color: transparent;
+            color: rgba(0,0,0,0.0);
         }
         @include border-radius(0%);
     }
 
     .amb-button-interval.checked {
         //color: $amb-clr-turquois;
-        color: $amb-clr-black;
+        color: $amb-clr-white;
         background: {
-            color: white;
+            color: rgba(0,0,0,0.2);
         }
 
         &:hover {
@@ -93,6 +93,7 @@
             bottom: 15px;
         };
         overflow: hidden;
+        @include box-sizing(border-box);
 
         // skin
         background: {
