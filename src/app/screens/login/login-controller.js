@@ -1,25 +1,20 @@
-(function (exports) {
-    'use strict';
+sandbox.angular.module('amb.login.loginController', [
+    'amb.model.User',
+    'amb.common.AuthService'
+]).controller('loginController', loginController);
 
-    exports.angular.module('amb.login.loginController', [
-        'amb.model.User',
-        'amb.common.AuthService'
-    ]).controller('loginController', loginController);
+function loginController($scope, $location, User, AuthService) {
 
-    function loginController($scope, $location, User, AuthService) {
+    $scope.login = function (user) {
+        AuthService.login(user.email, user.password).then(function () {
+            $location.path('/activity');
+        });
+    };
 
-        $scope.login = function (user) {
-            AuthService.login(user.email, user.password).then(function () {
-                $location.path('/activity');
-            });
-        };
-
-        $scope.register = function (user) {
-            User.save({email: user.email, password: user.password}).$promise.then(function (newUser) {
-                newUser.password = user.password;
-                $scope.login(newUser);
-            });
-        };
-    }
-
-}(this));
+    $scope.register = function (user) {
+        User.save({email: user.email, password: user.password}).$promise.then(function (newUser) {
+            newUser.password = user.password;
+            $scope.login(newUser);
+        });
+    };
+}

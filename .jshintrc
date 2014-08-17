@@ -11,7 +11,6 @@
     "quotmark": "single",
     "undef": true,
     "unused": "vars",
-    "strict": true,
     "trailing": true,
     "maxparams": 15,
     "maxdepth": 5,
@@ -31,6 +30,8 @@
         "expect",
         "iit",
         "xit",
-        "ddescribe"
+        "ddescribe",
+        "sandbox",
+        "require"
     ]
 }

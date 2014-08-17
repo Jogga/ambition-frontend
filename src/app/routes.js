@@ -1,24 +1,16 @@
-(function(exports) {
-    'use strict';
+sandbox.API_URL = 'http://localhost:3000/api/v1';
 
-    exports.API_URL = 'http://localhost:3000/api/v1';
+sandbox.angular.module('amb.routes', [])
+.value('routes', routes());
 
-    exports.angular.module('amb.routes', [])
-    .value('routes', routes());    
-
-    function routes() {
-        return {
-            ambitionsUrl: exports.API_URL + '/ambitions',
-            activitiesUrl: exports.API_URL + '/activities',
-            recordsPath: '/records',
-            recordsUrl: exports.API_URL + '/records',
-            signup: exports.API_URL + '/register',
-            login: exports.API_URL + '/auth/local',
-            usersUrl: exports.API_URL + '/users'
-        };
-    }
-
-
-
-
-}(this));
+function routes() {
+    return {
+        ambitionsUrl: sandbox.API_URL + '/ambitions',
+        activitiesUrl: sandbox.API_URL + '/activities',
+        recordsPath: '/records',
+        recordsUrl: sandbox.API_URL + '/records',
+        signup: sandbox.API_URL + '/register',
+        login: sandbox.API_URL + '/auth/local',
+        usersUrl: sandbox.API_URL + '/users'
+    };
+}

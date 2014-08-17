@@ -1,14 +1,15 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
+var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
-var concat = require('gulp-concat');
+var concat = require('gulp-concat-util');
 var livereload = require('gulp-livereload');
 var compass = require('gulp-compass');
 var flatten = require('gulp-flatten');
 var karma = require('gulp-karma');
-var templateCache = require("gulp-ng-html2js");
-var minifyHtml = require("gulp-minify-html");
+var templateCache = require('gulp-ng-html2js');
+var minifyHtml = require('gulp-minify-html');
 
 
 
@@ -27,8 +28,11 @@ var fonts = [
 ];
 
 var scripts = ['src/**/*.js', '!src/**/*.spec.js'];
+
 var templateFiles = 'src/**/*.html';
+
 var sassFiles = 'src/**/*.scss';
+
 var unitInput = [
     '_build/libs.js',
     '_build/templates.js',
@@ -42,11 +46,20 @@ gulp.task('scripts', ['templates'], function () {
     return gulp.src(scripts)
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'))
-        .pipe(concat('app.js'))
+        .pipe(concat('app.js', {
+            process: function (src) {
+                return [
+                    '(function (sandbox) {',
+                    '\'use strict\';',
+                    src,
+                    '}(this));'
+                ].join('\n');
+            }
+        }))
         .pipe(gulp.dest('_build/'));
 });
 
-gulp.task('compass', function() {
+gulp.task('compass', function () {
     return gulp.src(sassFiles)
         .pipe(flatten())
         .pipe(gulp.dest('_tmp/sass'))
@@ -55,7 +68,7 @@ gulp.task('compass', function() {
             sass: '_tmp/sass',
             image: 'assets/img'
         }))
-        .on('error', function(err) {
+        .on('error', function (err) {
             throw err;
         })
         .pipe(gulp.dest('_build/'));
@@ -99,13 +112,13 @@ gulp.task('fonts', function () {
 });
 
 
-gulp.task('test', ['scripts', 'templates'], function() {
+gulp.task('test', ['scripts', 'templates'], function () {
     return gulp.src(unitInput)
         .pipe(karma({
             configFile: 'karma.conf.js',
             action: 'run'
         }))
-        .on('error', function(err) {
+        .on('error', function (err) {
             console.log(err);
             throw err;
         });
@@ -138,11 +151,15 @@ gulp.task('watch', ['default'], function () {
 });
 
 
-gulp.task('default', function() {
+gulp.task('default', function () {
     gulp.start('libs', 'compass', 'scripts', 'test', 'fontawesome');
 });
 
-function handleError(err) {
-  console.log(err.toString());
-  this.emit('end');
-}
+gulp.task('clean-build-dir', function () {
+    gulp.src('_build/**/*', {read: false}).pipe(clean());
+});
+
+// function handleError(err) {
+//   console.log(err.toString());
+//   this.emit('end');
+// }

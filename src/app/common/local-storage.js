@@ -1,33 +1,28 @@
-(function (sandbox) {
-    'use strict';
+sandbox.angular.module('amb.localStorage', [])
+.factory('localStorage', function () {
+    var tokenKey = 'ato';
 
-    sandbox.angular.module('amb.localStorage', [])
-    .factory('localStorage', function () {
-        var tokenKey = 'ato';
+    var localStorage = sandbox.localStorage || {
+        setItem: function () {},
+        getItem: function () {},
+        removeItem: function () {}
+    };
 
-        var localStorage = sandbox.localStorage || {
-            setItem: function () {},
-            getItem: function () {},
-            removeItem: function () {}
-        };
+    function setAccessToken(token) {
+        localStorage.setItem(tokenKey, token);
+    }
 
-        function setAccessToken(token) {
-            localStorage.setItem(tokenKey, token);
-        }
+    function getAccessToken() {
+        return localStorage.getItem(tokenKey);
+    }
 
-        function getAccessToken() {            
-            return localStorage.getItem(tokenKey);
-        }
+    function deleteAccessToken() {
+        localStorage.removeItem(tokenKey);
+    }
 
-        function deleteAccessToken() {
-            localStorage.removeItem(tokenKey);
-        }
-
-        return {
-            setAccessToken: setAccessToken,
-            getAccessToken: getAccessToken,
-            deleteAccessToken: deleteAccessToken
-        };
-    });
-
-}(this));
+    return {
+        setAccessToken: setAccessToken,
+        getAccessToken: getAccessToken,
+        deleteAccessToken: deleteAccessToken
+    };
+});
