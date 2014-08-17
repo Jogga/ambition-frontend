@@ -1,7 +1,7 @@
 sandbox.angular.module('amb.newAmbition.newAmbitionController', [
     'amb.model.Ambition'
 ])
-.controller('NewAmbitionController', function ($scope, Ambition) {
+.controller('NewAmbitionController', function ($scope, $location, Ambition) {
     $scope.newAmbition = {
         goal: '',
         exercise: '',
@@ -12,12 +12,7 @@ sandbox.angular.module('amb.newAmbition.newAmbitionController', [
         if (!$scope.canCreate()) { return; }
 
         Ambition.save($scope.newAmbition).$promise.then(function (ambition) {
-            // $scope.ambitions.push(ambition);
-            $scope.newAmbition = {
-                goal: '',
-                exercise: '',
-                interval: {mo: true, tu: true, we: true, th: true, fr: true, sa: true, su: true}
-            };
+            $location.path('/ambitions');
         });
     };
 
