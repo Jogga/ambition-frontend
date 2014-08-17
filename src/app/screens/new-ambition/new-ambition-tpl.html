@@ -1,0 +1,44 @@
+<form class="amb-new">
+    <fieldset>
+        <label>What is your ambition?</label>
+        <input ng-model="newAmbition.goal" type="text" placeholder="get fitter">
+    </fieldset>
+    <fieldset>
+        <label for="">To achieve this, what do you need to do? </label>
+        <input ng-model="newAmbition.exercise" type="text" placeholder="train in the gym">
+    </fieldset>
+    <fieldset>
+        <label for="" class="amb-label-interval">How often do you want to do this activity?</label>
+        <div>
+            <span class="amb-button interval"
+                  ng-class="{'checked': newAmbition.interval.mo}"
+                  ng-click="toggleActiveDay(newAmbition, 'mo')">Mo</span>
+            <span class="amb-button interval"
+                  ng-class="{'checked': newAmbition.interval.tu}"
+                  ng-click="toggleActiveDay(newAmbition, 'tu')">Tu</span>
+            <span class="amb-button interval"
+                  ng-class="{'checked': newAmbition.interval.we}"
+                  ng-click="toggleActiveDay(newAmbition, 'we')">We</span>
+            <span class="amb-button interval"
+                  ng-class="{'checked': newAmbition.interval.th}"
+                  ng-click="toggleActiveDay(newAmbition, 'th')">Th</span>
+            <span class="amb-button interval"
+                  ng-class="{'checked': newAmbition.interval.fr}"
+                  ng-click="toggleActiveDay(newAmbition, 'fr')">Fr</span>
+            <span class="amb-button interval"
+                  ng-class="{'checked': newAmbition.interval.sa}"
+                  ng-click="toggleActiveDay(newAmbition, 'sa')">Sa</span>
+            <span class="amb-button interval"
+                  ng-class="{'checked': newAmbition.interval.su}"
+                  ng-click="toggleActiveDay(newAmbition, 'su')">Su</span>
+        </div>
+    </fieldset>
+<!--<fieldset>
+        <label for="">My first reachable goal is to</label>
+        <input type="text" placeholder="loose 2kg weight">
+    </fieldset> -->
+    <fieldset class="amb-form-finish">
+        <button ng-click="showNew = false" class="amb-button">cancel</button>
+        <button ng-click="createAmbition()" class="amb-button amb-button-positive" ng-active="canCreate()">get started</button>
+    </fieldset>
+</form>

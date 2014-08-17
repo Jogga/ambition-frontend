@@ -1,0 +1,87 @@
+/**
+ * new ambition styles for ambition.me
+ * @author Jogga <joachim@froestl.com>
+ */
+
+.amb-ambition-new {
+    background: {
+        color: $amb-clr-grey-lgt;
+    }
+    color: $amb-clr-black;
+    cursor: pointer;
+
+    @include transition-property(background);
+    @include transition-duration(0.25s);
+    &:hover {
+        @include transition-duration(0.1s);
+        background: {
+            color: $amb-clr-white;
+        }
+    }
+}
+
+
+.amb-ambition-create {
+
+    fieldset {
+        border: none;
+        margin: {
+            bottom: 30px;
+        };
+        padding: 0;
+    }
+    label {
+        display: block;
+        font: {
+            family: $amb-fnt-serif;
+            size: 20px;
+        }
+    }
+    input {
+        @include box-sizing(border-box);
+        padding: {
+            left: 2px;
+            bottom: 4px;
+        }
+        border: {
+            style: solid;
+            width: 0px;
+            bottom-width: 1px;
+            color: $amb-clr-grey-lgt;
+        }
+        font: {
+            size: 26px;
+        }
+        -webkit-font-smoothing: antialiased;
+        background: $amb-clr-white;
+        display: block;
+        width: 100%;
+
+        @include transition-property(background);
+        @include transition-duration(0.25s);
+        &:hover,
+        &:focus {
+            outline: none;
+            @include transition-duration(0.1s);
+            background-color: $amb-clr-grey-xlgt;
+        }
+    }
+    select {
+        padding: 5px;
+        border: none;
+        background-color: $amb-clr-grey-xlgt;
+    }
+
+    .amb-label-interval {
+        margin: {
+            bottom: 10px;
+        }
+    }
+
+    .amb-form-finish {
+        margin: {
+            top: 50px;
+            bottom: 20px;
+        }
+    }
+}
