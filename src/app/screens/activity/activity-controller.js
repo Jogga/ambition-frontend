@@ -15,11 +15,6 @@
         var moment = sandbox.moment;
         $scope.today = getWeekday(moment());
 
-        // var mondayOfCurrWeek = moment().startOf('isoweek');
-        // var sundayOfCurrWeel = moment().endOf('isoweek');
-        // var daysSinceMonday = mondayOfCurrWeek.diff(moment(), 'days');
-        // var daysTillSunday = sundayOfCurrWeel.diff(moment(), 'days');
-
         $scope.ambitions = sharedData.ambitionList;
 
         $scope.getAmbitionsForToday = function () {
@@ -33,15 +28,22 @@
         };
 
         function isRelevantToday(ambition) {
+            // Check if ambition has last record else return if ambition inteval matches today
             if (ambition.lastRecord) {
-                var lastRecDay = getWeekday(sandbox.moment(ambition.lastRecord.createdAt));
-                return ambition.interval[$scope.today] && lastRecDay !== $scope.today;
+                // Check if last record was today
+                var lastRecordIsToday = !!getDiffInDays(new Date(), ambition.lastRecord.createdAt);
+                // return if ambition inteval matches today and last record was not today
+                return ambition.interval[$scope.today] && lastRecordIsToday;
             }
             return ambition.interval[$scope.today];
         }
 
         function getWeekday (moment) {
             return sandbox.moment.langData('en').weekdaysMin(moment).toLowerCase();
+        }
+
+        function getDiffInDays(date1, date2) {
+            return moment(date1).diff(moment(date2), 'days');
         }
 
     }
