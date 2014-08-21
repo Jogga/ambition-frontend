@@ -12,7 +12,6 @@ html {
 
 
 div[ng-view]{
-    max-width: 600px;
     padding: {
         top: 50px;
     }
@@ -20,4 +19,12 @@ div[ng-view]{
         right: auto;
         left: auto;
     }
+}
+
+
+/* container */
+.amb-container {
+    // box
+    max-width: 600px;
+    margin: 0 auto;
 }

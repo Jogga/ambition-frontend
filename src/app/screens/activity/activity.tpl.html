@@ -1,21 +1,22 @@
 <ul class="amb-activities" ng-if="getAmbitionsForToday().length > 0">
 
     <li ng-repeat="ambition in getAmbitionsForToday()" class="amb-activity" style="background-color:{{ambition.color}}">
+        <div class="amb-container">
+            <div class="amb-activity-interaction">
+                <button class="amb-button amb-button-positive" ng-click="checkAmbition(ambition)">
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                        <polyline class="amb-icon-path" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points=" 12,28 19,35 40,14 "/>
+                    </svg>
+                </button>
+                <!-- <button class="amb-activity-fault">not today</button> -->
+            </div>
 
-        <div class="amb-activity-interaction">
-            <button class="amb-button amb-button-positive" ng-click="checkAmbition(ambition)">
-                <?xml version="1.0" encoding="utf-8"?>
-                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
-                    <polyline class="amb-icon-path" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points=" 12,28 19,35 40,14 "/>
-                </svg>
-            </button>
-            <!-- <button class="amb-activity-fault">not today</button> -->
-        </div>
-
-        <div class="amb-activity-desc">
-            <h2 class="amb-activity-name">{{ambition.exercise}}</h2>
-            <div class="amb-ambition-name">to {{ambition.goal}}</div>
-            <!-- <span class="amb-activity-streak">{{ambition.streak}} week streak</span> -->
+            <div class="amb-activity-desc">
+                <h2 class="amb-activity-name">{{ambition.exercise}}</h2>
+                <div class="amb-ambition-name">to {{ambition.goal}}</div>
+                <!-- <span class="amb-activity-streak">{{ambition.streak}} week streak</span> -->
+            </div>
         </div>
     </li>
 </ul>
