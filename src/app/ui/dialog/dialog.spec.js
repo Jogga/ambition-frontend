@@ -39,25 +39,23 @@ describe('dialog', function () {
             expect(angular.element(el[0].querySelector('.dialog-overlay')).length).toEqual(1);
         });
 
-        it('#.confirm() returns a promsie', function () {
+        it('returns a promsie when #.confirm()', function () {
             expect(dlg.promise.then instanceof Function);
         });
 
-        it('rejects the promise, when #cancel() is called', function () {
+        it('rejects the promise, when #.cancel() is called', function () {
             var catchFn = jasmine.createSpy('catchFn');
             dlg.promise.catch(catchFn);
-            // dlg.cancel();
-            // expect(catchFn).toHaveBeenCalled();
+            dlg.cancel();
+            expect(catchFn).toHaveBeenCalled();
         });
 
-        it('asdasdasdasd, when #cancel() is called', function () {
+        it('fulfills the promise, when #.confirm() is called', function () {
             var catchFn = jasmine.createSpy('catchFn');
             var confirmFn = jasmine.createSpy('confirmFn');
-            dlg.promise.then(function (argument) {
-                console.log('asdasdasd');
-            }, catchFn);
+            dlg.promise.then(confirmFn, catchFn);
             dlg.confirm();
-            // expect(confirmFn).toHaveBeenCalled();
+            expect(confirmFn).toHaveBeenCalled();
         });
     });
 

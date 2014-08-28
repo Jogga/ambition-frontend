@@ -2,7 +2,7 @@ sandbox.angular.module('amb.ui.dialog', [
 ])
 .factory('dialog', dialogFactory);
 
-function dialogFactory($q, $compile, $rootScope, $timeout) {
+function dialogFactory($q, $compile, $rootScope) {
     return {
         confirm: confirmFn
     };
@@ -29,25 +29,23 @@ function dialogFactory($q, $compile, $rootScope, $timeout) {
 
         config.attachTo.append(element);
 
+        // Confirm function which resolves the dialog promise
         scope.confirm = function () {
-            console.log('confirm called');
             deferred.resolve(scope);
+            if (!$rootScope.$$phase) { scope.$digest(); }
             scope.$destroy();
         };
 
+        // Cancel function which rejects the dialog promise
         scope.cancel = function () {
-            console.log('cancel called');
             deferred.reject();
             if (!$rootScope.$$phase) { scope.$digest(); }
-            // $timeout(function () {
             scope.$destroy();
-            // }, 0);
         };
 
         scope.$on('$destroy', function () {
-            // config.attachTo.removeClass('overlay-open');
             element.remove();
-            // It might be a good idea to cancel the promise here
+
         });
 
         return {
