@@ -1,13 +1,13 @@
 sandbox.angular.module('amb.record.RecordController', [
-    'amb.sharedData',
+    'amb.functional',
     'amb.model.Record',
     'amb.record.recordListDirective'
 ]).controller('RecordController', RecordController);
 
-function RecordController($scope, sharedData, Record, recordList) {
-    var ambitionLookup = {};
+function RecordController($scope, f, Record, ambitionList, recordList) {
+
     $scope.records = recordList;
-    $scope.ambitions = sharedData.ambitionList;
+    $scope.ambitions = ambitionList;
 
     $scope.removeRecord = function (record, index) {
         record.$remove().then(function (res) {
@@ -15,13 +15,11 @@ function RecordController($scope, sharedData, Record, recordList) {
         });
     };
 
-    $scope.ambitions.$promise.then(function (list) {
-        list.forEach(function (ambition) {
-            ambitionLookup[ambition.id] = ambition;
-        });
+    $scope.ambitions.$promise.then(function (ambitionList) {
+        var ambitionMap = f.createMap(ambitionList);
 
         recordList.map(function (record) {
-            record.ambition = ambitionLookup[record.ambition] || {};
+            record.ambition = ambitionMap[record.ambition] || {};
             return record;
         });
     });

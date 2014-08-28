@@ -1,18 +1,16 @@
 sandbox.angular.module('amb.activity.ActivityController', [
-    'amb.sharedData',
     'amb.model.Ambition',
-    'amb.model.Record',
-    'amb.functional'
+    'amb.model.Record'
 ])
 .controller('ActivityController', ActivityController);
 
 
-function ActivityController($scope, $f, sharedData, Record) {
+function ActivityController($scope, ambitionList, Record) {
 
     var moment = sandbox.moment;
     $scope.today = getWeekday(moment());
 
-    $scope.ambitions = sharedData.ambitionList;
+    $scope.ambitions = ambitionList;
 
     $scope.getAmbitionsForToday = function () {
         return $scope.ambitions.filter(isRelevantToday);
