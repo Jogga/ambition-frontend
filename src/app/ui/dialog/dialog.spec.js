@@ -57,6 +57,29 @@ describe('dialog', function () {
             dlg.confirm();
             expect(confirmFn).toHaveBeenCalled();
         });
+
+        it('fullfills the promise when button "Confirm" is clicked', function () {
+            var confirmFn = jasmine.createSpy('confirmFn');
+            var btn = angular.element(el[0].querySelector('[ng-click="confirm()"]'));
+
+            dlg.promise.then(confirmFn);
+
+            btn.triggerHandler('click');
+
+            expect(confirmFn).toHaveBeenCalled();
+        });
+
+        it('fullfills the promise when button "Cancel" is clicked', function () {
+            var rejectFn = jasmine.createSpy('rejectFn');
+            var btn = angular.element(el[0].querySelector('[ng-click="cancel()"]'));
+
+            dlg.promise.catch(rejectFn);
+
+            btn.triggerHandler('click');
+
+            expect(rejectFn).toHaveBeenCalled();
+        });
+
     });
 
 });

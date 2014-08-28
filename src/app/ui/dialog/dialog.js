@@ -20,8 +20,10 @@ function dialogFactory($q, $compile, $rootScope) {
             '<h3>' + config.title + '</h3>',
             '<p>' + config.content + '</p>',
             '<div class="dialog-buttons">',
-            '<button class="amb-button" ng-click="cancel()">No</button>',
-            '<button class="amb-button" ng-click="confirm()">Yes</button>',
+            (config.closeOnly ?
+            '<button class="amb-button" ng-click="cancel()">Ok</button>' :
+            '<button class="amb-button" ng-click="cancel()">No</button>' +
+            '<button class="amb-button" ng-click="confirm()">Yes</button>'),
             '</div>',
             '</div>',
             '</div>'
