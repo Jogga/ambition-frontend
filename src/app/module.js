@@ -1,4 +1,5 @@
 sandbox.angular.module('amb', [
+    'amb.common.AuthInterceptor',
     'amb.common.AuthService',
     'amb.sharedData',
     'amb.templates',
