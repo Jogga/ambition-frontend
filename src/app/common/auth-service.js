@@ -1,16 +1,27 @@
 sandbox.angular.module('amb.common.AuthService', [
     'amb.model.User',
-    'amb.localStorage'
-]).factory('AuthService', function ($location, $http, User, localStorage) {
+    'amb.localStorage',
+    'amb.ui.dialog'
+]).factory('AuthService', function ($location, $http, User, localStorage, dialog) {
+
+    function confirmLoginFn(res) {
+        localStorage.setAccessToken(res.token);
+        $http.defaults.headers.common.Authorization = 'Baerer ' + res.token;
+    }
+
+    function errorLoginFn(res) {
+        dialog.confirm({
+            title: 'Sorry, an error occured',
+            content: 'There was an error while logging in: ' + res.data.message,
+            closeOnly: true
+        });
+    }
 
     function login(email, password) {
-
-        return User.login({email: email, password: password}).$promise.then(function (res) {
-            localStorage.setAccessToken(res.token);
-            $http.defaults.headers.common.Authorization = 'Baerer ' + res.token;
-        }, function (err) {
-            console.log('error logging in', err);
-        });
+        return User.login({
+            email: email,
+            password: password
+        }).$promise.then(confirmLoginFn, errorLoginFn);
     }
 
     function logout() {
