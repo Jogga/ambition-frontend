@@ -24,7 +24,7 @@ describe('activity controller', function () {
         };
 
         var sharedDataMock = {ambitionList: [relevantAmbition, completedAmbition]};
-        ctrl = $controller('ActivityController', {$scope: $scope, sharedData: sharedDataMock});
+        ctrl = $controller('ActivityController', {$scope: $scope, ambitionList: sharedDataMock.ambitionList});
     }));
 
     it('shows ambitions which do not have a record today ', function () {
