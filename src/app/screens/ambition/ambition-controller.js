@@ -31,8 +31,6 @@ function AmbitionController($scope, dialog, sharedData, Ambition, Record) {
             ambition.$remove().then(function (success) {
                 $scope.ambitions.splice(index, 1);
             });
-        }).catch(function () {
-            console.log('test catch');
         });
     };
 

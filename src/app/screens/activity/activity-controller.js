@@ -35,7 +35,7 @@ function ActivityController($scope, $f, sharedData, Record) {
         return ambition.interval[$scope.today];
     }
 
-    function getWeekday (moment) {
+    function getWeekday(moment) {
         return sandbox.moment.langData('en').weekdaysMin(moment).toLowerCase();
     }
 
