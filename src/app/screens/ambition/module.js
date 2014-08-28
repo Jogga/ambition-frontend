@@ -1,7 +1,6 @@
 sandbox.angular.module('amb.ambition', [
     'ngRoute',
     'amb.sharedData',
-    'amb.ui.inlineEdit',
     'amb.ambition.AmbitionController'
 ])
 .config(function ($routeProvider, sharedDataProvider) {

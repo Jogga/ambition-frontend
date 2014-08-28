@@ -12,16 +12,16 @@ describe('activity controller', function () {
 
         var completedAmbition = {
             id: '1',
-            exercise:'completedAmbition',
+            exercise: 'completedAmbition',
             lastRecord: {createdAt: new Date()},
             interval: {mo: true, tu: true, we: true, th: true, fr: true, sa: true, su: true}
         };
 
         var relevantAmbition = {
             id: '2',
-            exercise:'relevantAmbition',
+            exercise: 'relevantAmbition',
             interval: {mo: true, tu: true, we: true, th: true, fr: true, sa: true, su: true}
-        }
+        };
 
         var sharedDataMock = {ambitionList: [relevantAmbition, completedAmbition]};
         ctrl = $controller('ActivityController', {$scope: $scope, sharedData: sharedDataMock});
@@ -36,7 +36,7 @@ describe('activity controller', function () {
         d.setDate(d.getDate() - 7);
         var ambition = {
             id: '1',
-            exercise:'completedAmbition',
+            exercise: 'completedAmbition',
             lastRecord: {createdAt: d},
             interval: {mo: true, tu: true, we: true, th: true, fr: true, sa: true, su: true}
         };
@@ -48,7 +48,7 @@ describe('activity controller', function () {
         var today = new Date();
         var notTodayAmbition = {
             id: '3',
-            exercise:'notTodayAmbition',
+            exercise: 'notTodayAmbition',
             interval: {mo: true, tu: true, we: true, th: true, fr: true, sa: true, su: true}
         };
         notTodayAmbition.interval[weekdays[today.getDay()]] = false;

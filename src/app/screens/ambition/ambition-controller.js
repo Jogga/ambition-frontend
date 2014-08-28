@@ -2,6 +2,7 @@ sandbox.angular.module('amb.ambition.AmbitionController', [
     'amb.sharedData',
     'amb.model.Ambition',
     'amb.model.Record',
+    'amb.ui.inlineEdit',
     'amb.ui.dialog'
 ]).controller('AmbitionController', AmbitionController);
 
@@ -28,14 +29,17 @@ function AmbitionController($scope, dialog, sharedData, Ambition, Record) {
             title: 'Delete ambition?',
             content: 'Do you really want to delete your ambition "' + ambition.exercise + '"?'
         }).promise.then(function (scope) {
-            ambition.$remove().then(function (success) {
+            ambition.$remove().then(function () {
                 $scope.ambitions.splice(index, 1);
             });
         });
     };
 
     $scope.checkAmbition = function (ambition) {
-        Record.create({ success: true, ambitionId: ambition.id }).$promise.then(function (record) {
+        Record.create({
+            success: true,
+            ambitionId: ambition.id
+        }).$promise.then(function (record) {
             ambition.lastRecord = record;
             ambition.streak = ambition.streak + 1;
         });

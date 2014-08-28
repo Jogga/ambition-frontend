@@ -1,8 +1,7 @@
 sandbox.angular.module('amb.newAmbition.newAmbitionController', [
-    'amb.model.Ambition',
-    'amb.sharedData'
+    'amb.model.Ambition'
 ])
-.controller('NewAmbitionController', function ($scope, $location, sharedData, Ambition) {
+.controller('NewAmbitionController', function ($scope, $location, ambitionList, Ambition) {
     $scope.newAmbition = {
         goal: '',
         exercise: '',
@@ -13,8 +12,8 @@ sandbox.angular.module('amb.newAmbition.newAmbitionController', [
         if (!$scope.canCreate()) { return; }
 
         Ambition.save($scope.newAmbition).$promise.then(function (ambition) {
-            if (sharedData.ambitionList) {
-                sharedData.ambitionList.push(ambition);
+            if (ambitionList) {
+                ambitionList.push(ambition);
             }
             $location.path('/ambitions');
         });
